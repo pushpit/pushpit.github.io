@@ -1,0 +1,1001 @@
+Income Bucket,Year-1,GII,Year,Date,Country,Code,Country-1
+L,1995,null,1995,1/1/95,Afghanistan,AFG,Afghanistan
+L,1995,null,1995,1/1/95,Albania,ALB,Albania
+LM,1995,0.68,1995,1/1/95,Algeria,DZA,Algeria
+UM,1995,0.431,1995,1/1/95,Argentina,ARG,Argentina
+L,1995,0.471,1995,1/1/95,Armenia,ARM,Armenia
+H,1995,0.18,1995,1/1/95,Australia,AUS,Australia
+H,1995,0.187,1995,1/1/95,Austria,AUT,Austria
+L,1995,null,1995,1/1/95,Azerbaijan,AZE,Azerbaijan
+H,1995,null,1995,1/1/95,Bahamas,BHS,Bahamas
+UM,1995,null,1995,1/1/95,Bahrain,BHR,Bahrain
+L,1995,0.656,1995,1/1/95,Bangladesh,BGD,Bangladesh
+UM,1995,0.372,1995,1/1/95,Barbados,BRB,Barbados
+LM,1995,null,1995,1/1/95,Belarus,BLR,Belarus
+H,1995,0.163,1995,1/1/95,Belgium,BEL,Belgium
+LM,1995,0.515,1995,1/1/95,Belize,BLZ,Belize
+L,1995,0.682,1995,1/1/95,Benin,BEN,Benin
+L,1995,null,1995,1/1/95,Bhutan,BTN,Bhutan
+LM,1995,null,1995,1/1/95,Bolivia,BOL,Bolivia
+L,1995,null,1995,1/1/95,Bosnia and Herzegovina,BIH,Bosnia and Herzegovina
+LM,1995,0.551,1995,1/1/95,Botswana,BWA,Botswana
+UM,1995,0.509,1995,1/1/95,Brazil,BRA,Brazil
+LM,1995,0.373,1995,1/1/95,Bulgaria,BGR,Bulgaria
+L,1995,null,1995,1/1/95,Burundi,BDI,Burundi
+L,1995,0.66,1995,1/1/95,Cambodia,KHM,Cambodia
+L,1995,0.703,1995,1/1/95,Cameroon,CMR,Cameroon
+H,1995,0.184,1995,1/1/95,Canada,CAN,Canada
+L,1995,0.74,1995,1/1/95,Central African Republic,CAF,Central African Republic
+L,1995,null,1995,1/1/95,Chad,TCD,Chad
+UM,1995,0.476,1995,1/1/95,Chile,CHL,Chile
+L,1995,null,1995,1/1/95,China,CHN,China
+LM,1995,0.538,1995,1/1/95,Colombia,COL,Colombia
+L,1995,0.709,1995,1/1/95,Côte d'Ivoire,CIV,Côte d'Ivoire
+UM,1995,0.28,1995,1/1/95,Croatia,HRV,Croatia
+LM,1995,0.428,1995,1/1/95,Cuba,CUB,Cuba
+H,1995,0.347,1995,1/1/95,Cyprus,CYP,Cyprus
+UM,1995,0.252,1995,1/1/95,Czech Republic,CZE,Czech Republic
+H,1995,0.102,1995,1/1/95,Denmark,DNK,Denmark
+LM,1995,0.571,1995,1/1/95,Dominican Republic,DOM,Dominican Republic
+LM,1995,0.589,1995,1/1/95,Ecuador,ECU,Ecuador
+LM,1995,0.386,1995,1/1/95,Estonia,EST,Estonia
+L,1995,null,1995,1/1/95,Ethiopia,ETH,Ethiopia
+LM,1995,0.499,1995,1/1/95,Fiji,FJI,Fiji
+H,1995,0.103,1995,1/1/95,Finland,FIN,Finland
+H,1995,0.22,1995,1/1/95,France,FRA,France
+UM,1995,0.606,1995,1/1/95,Gabon,GAB,Gabon
+L,1995,0.426,1995,1/1/95,Georgia,GEO,Georgia
+H,1995,0.156,1995,1/1/95,Germany,DEU,Germany
+L,1995,0.626,1995,1/1/95,Ghana,GHA,Ghana
+UM,1995,0.283,1995,1/1/95,Greece,GRC,Greece
+LM,1995,0.596,1995,1/1/95,Guatemala,GTM,Guatemala
+L,1995,null,1995,1/1/95,Guyana,GUY,Guyana
+L,1995,null,1995,1/1/95,Haiti,HTI,Haiti
+L,1995,null,1995,1/1/95,Honduras,HND,Honduras
+UM,1995,0.322,1995,1/1/95,Hungary,HUN,Hungary
+H,1995,0.184,1995,1/1/95,Iceland,ISL,Iceland
+L,1995,0.687,1995,1/1/95,India,IND,India
+LM,1995,0.578,1995,1/1/95,Indonesia,IDN,Indonesia
+LM,1995,0.658,1995,1/1/95,Iraq,IRQ,Iraq
+H,1995,0.202,1995,1/1/95,Ireland,IRL,Ireland
+H,1995,0.244,1995,1/1/95,Israel,ISR,Israel
+H,1995,0.198,1995,1/1/95,Italy,ITA,Italy
+LM,1995,0.48,1995,1/1/95,Jamaica,JAM,Jamaica
+H,1995,0.159,1995,1/1/95,Japan,JPN,Japan
+LM,1995,0.674,1995,1/1/95,Jordan,JOR,Jordan
+LM,1995,0.449,1995,1/1/95,Kazakhstan,KAZ,Kazakhstan
+L,1995,0.708,1995,1/1/95,Kenya,KEN,Kenya
+H,1995,0.585,1995,1/1/95,Kuwait,KWT,Kuwait
+LM,1995,0.41,1995,1/1/95,Latvia,LVA,Latvia
+LM,1995,null,1995,1/1/95,Lebanon,LBN,Lebanon
+LM,1995,0.577,1995,1/1/95,Lesotho,LSO,Lesotho
+L,1995,null,1995,1/1/95,Liberia,LBR,Liberia
+UM,1995,null,1995,1/1/95,Libya,LBY,Libya
+LM,1995,0.325,1995,1/1/95,Lithuania,LTU,Lithuania
+H,1995,0.2,1995,1/1/95,Luxembourg,LUX,Luxembourg
+L,1995,0.719,1995,1/1/95,Malawi,MWI,Malawi
+UM,1995,0.398,1995,1/1/95,Malaysia,MYS,Malaysia
+LM,1995,0.649,1995,1/1/95,Maldives,MDV,Maldives
+L,1995,0.726,1995,1/1/95,Mali,MLI,Mali
+UM,1995,0.331,1995,1/1/95,Malta,MLT,Malta
+L,1995,0.809,1995,1/1/95,Mauritania,MRT,Mauritania
+UM,1995,0.479,1995,1/1/95,Mauritius,MUS,Mauritius
+UM,1995,0.508,1995,1/1/95,Mexico,MEX,Mexico
+LM,1995,0.486,1995,1/1/95,Moldova,MDA,Moldova
+L,1995,0.5,1995,1/1/95,Mongolia,MNG,Mongolia
+..,1995,null,1995,1/1/95,Montenegro,MNE,Montenegro
+LM,1995,0.713,1995,1/1/95,Morocco,MAR,Morocco
+L,1995,0.664,1995,1/1/95,Mozambique,MOZ,Mozambique
+L,1995,null,1995,1/1/95,Myanmar,MMR,Myanmar
+LM,1995,0.555,1995,1/1/95,Namibia,NAM,Namibia
+L,1995,0.71,1995,1/1/95,Nepal,NPL,Nepal
+H,1995,0.113,1995,1/1/95,Netherlands,NLD,Netherlands
+L,1995,0.629,1995,1/1/95,Nicaragua,NIC,Nicaragua
+L,1995,0.831,1995,1/1/95,Niger,NER,Niger
+H,1995,0.122,1995,1/1/95,Norway,NOR,Norway
+UM,1995,null,1995,1/1/95,Oman,OMN,Oman
+L,1995,0.766,1995,1/1/95,Pakistan,PAK,Pakistan
+LM,1995,0.517,1995,1/1/95,Panama,PAN,Panama
+LM,1995,0.668,1995,1/1/95,Papua New Guinea,PNG,Papua New Guinea
+LM,1995,0.575,1995,1/1/95,Paraguay,PRY,Paraguay
+LM,1995,0.547,1995,1/1/95,Peru,PER,Peru
+LM,1995,0.483,1995,1/1/95,Philippines,PHL,Philippines
+LM,1995,0.258,1995,1/1/95,Poland,POL,Poland
+H,1995,0.243,1995,1/1/95,Portugal,PRT,Portugal
+H,1995,null,1995,1/1/95,Qatar,QAT,Qatar
+LM,1995,0.474,1995,1/1/95,Romania,ROU,Romania
+LM,1995,0.467,1995,1/1/95,Russian Federation,RUS,Russian Federation
+L,1995,0.583,1995,1/1/95,Rwanda,RWA,Rwanda
+LM,1995,null,1995,1/1/95,Samoa,WSM,Samoa
+UM,1995,null,1995,1/1/95,Saudi Arabia,SAU,Saudi Arabia
+L,1995,0.628,1995,1/1/95,Senegal,SEN,Senegal
+..,1995,null,1995,1/1/95,Serbia,SRB,Serbia
+L,1995,null,1995,1/1/95,Sierra Leone,SLE,Sierra Leone
+H,1995,0.252,1995,1/1/95,Singapore,SGP,Singapore
+UM,1995,0.247,1995,1/1/95,Slovenia,SVN,Slovenia
+UM,1995,0.424,1995,1/1/95,South Africa,ZAF,South Africa
+H,1995,0.157,1995,1/1/95,Spain,ESP,Spain
+L,1995,0.72,1995,1/1/95,Sudan,SDN,Sudan
+LM,1995,null,1995,1/1/95,Suriname,SUR,Suriname
+LM,1995,0.652,1995,1/1/95,Swaziland,SWZ,Swaziland
+H,1995,0.09,1995,1/1/95,Sweden,SWE,Sweden
+H,1995,0.117,1995,1/1/95,Switzerland,CHE,Switzerland
+LM,1995,0.569,1995,1/1/95,Syrian Arab Republic,SYR,Syrian Arab Republic
+L,1995,0.558,1995,1/1/95,Tajikistan,TJK,Tajikistan
+L,1995,0.652,1995,1/1/95,Tanzania,TZA,Tanzania
+LM,1995,0.4,1995,1/1/95,Thailand,THA,Thailand
+L,1995,0.741,1995,1/1/95,Togo,TGO,Togo
+LM,1995,0.684,1995,1/1/95,Tonga,TON,Tonga
+UM,1995,0.426,1995,1/1/95,Trinidad and Tobago,TTO,Trinidad and Tobago
+LM,1995,0.532,1995,1/1/95,Tunisia,TUN,Tunisia
+LM,1995,0.631,1995,1/1/95,Turkey,TUR,Turkey
+LM,1995,0.369,1995,1/1/95,Turkmenistan,TKM,Turkmenistan
+L,1995,0.65,1995,1/1/95,Uganda,UGA,Uganda
+LM,1995,0.482,1995,1/1/95,Ukraine,UKR,Ukraine
+H,1995,0.643,1995,1/1/95,United Arab Emirates,ARE,United Arab Emirates
+H,1995,0.237,1995,1/1/95,United Kingdom,GBR,United Kingdom
+H,1995,0.305,1995,1/1/95,United States,USA,United States
+UM,1995,0.44,1995,1/1/95,Uruguay,URY,Uruguay
+LM,1995,null,1995,1/1/95,Uzbekistan,UZB,Uzbekistan
+L,1995,0.383,1995,1/1/95,VietNam,VNM,Vietnam
+L,1995,0.625,1995,1/1/95,Zambia,ZMB,Zambia
+L,1995,0.598,1995,1/1/95,Zimbabwe,ZWE,Zimbabwe
+L,2000,null,2000,1/1/00,Afghanistan,AFG,Afghanistan
+LM,2000,0.381,2000,1/1/00,Albania,ALB,Albania
+LM,2000,0.627,2000,1/1/00,Algeria,DZA,Algeria
+UM,2000,0.422,2000,1/1/00,Argentina,ARG,Argentina
+L,2000,0.467,2000,1/1/00,Armenia,ARM,Armenia
+H,2000,0.16,2000,1/1/00,Australia,AUS,Australia
+H,2000,0.151,2000,1/1/00,Austria,AUT,Austria
+L,2000,null,2000,1/1/00,Azerbaijan,AZE,Azerbaijan
+H,2000,0.385,2000,1/1/00,Bahamas,BHS,Bahamas
+UM,2000,null,2000,1/1/00,Bahrain,BHR,Bahrain
+L,2000,0.63,2000,1/1/00,Bangladesh,BGD,Bangladesh
+H,2000,0.356,2000,1/1/00,Barbados,BRB,Barbados
+LM,2000,null,2000,1/1/00,Belarus,BLR,Belarus
+H,2000,0.122,2000,1/1/00,Belgium,BEL,Belgium
+LM,2000,0.481,2000,1/1/00,Belize,BLZ,Belize
+L,2000,0.678,2000,1/1/00,Benin,BEN,Benin
+L,2000,null,2000,1/1/00,Bhutan,BTN,Bhutan
+LM,2000,0.591,2000,1/1/00,Bolivia,BOL,Bolivia
+LM,2000,null,2000,1/1/00,Bosnia and Herzegovina,BIH,Bosnia and Herzegovina
+UM,2000,0.521,2000,1/1/00,Botswana,BWA,Botswana
+UM,2000,0.503,2000,1/1/00,Brazil,BRA,Brazil
+LM,2000,0.336,2000,1/1/00,Bulgaria,BGR,Bulgaria
+L,2000,0.594,2000,1/1/00,Burundi,BDI,Burundi
+L,2000,0.599,2000,1/1/00,Cambodia,KHM,Cambodia
+L,2000,0.693,2000,1/1/00,Cameroon,CMR,Cameroon
+H,2000,null,2000,1/1/00,Canada,CAN,Canada
+L,2000,0.706,2000,1/1/00,Central African Republic,CAF,Central African Republic
+L,2000,null,2000,1/1/00,Chad,TCD,Chad
+UM,2000,0.434,2000,1/1/00,Chile,CHL,Chile
+LM,2000,0.254,2000,1/1/00,China,CHN,China
+LM,2000,0.497,2000,1/1/00,Colombia,COL,Colombia
+L,2000,null,2000,1/1/00,Côte d'Ivoire,CIV,Côte d'Ivoire
+UM,2000,0.206,2000,1/1/00,Croatia,HRV,Croatia
+LM,2000,0.393,2000,1/1/00,Cuba,CUB,Cuba
+H,2000,0.258,2000,1/1/00,Cyprus,CYP,Cyprus
+UM,2000,null,2000,1/1/00,Czech Republic,CZE,Czech Republic
+H,2000,0.076,2000,1/1/00,Denmark,DNK,Denmark
+LM,2000,0.485,2000,1/1/00,Dominican Republic,DOM,Dominican Republic
+LM,2000,0.491,2000,1/1/00,Ecuador,ECU,Ecuador
+UM,2000,0.284,2000,1/1/00,Estonia,EST,Estonia
+L,2000,null,2000,1/1/00,Ethiopia,ETH,Ethiopia
+LM,2000,null,2000,1/1/00,Fiji,FJI,Fiji
+H,2000,0.085,2000,1/1/00,Finland,FIN,Finland
+H,2000,0.192,2000,1/1/00,France,FRA,France
+UM,2000,0.595,2000,1/1/00,Gabon,GAB,Gabon
+L,2000,0.422,2000,1/1/00,Georgia,GEO,Georgia
+H,2000,0.13,2000,1/1/00,Germany,DEU,Germany
+L,2000,null,2000,1/1/00,Ghana,GHA,Ghana
+H,2000,0.221,2000,1/1/00,Greece,GRC,Greece
+LM,2000,0.599,2000,1/1/00,Guatemala,GTM,Guatemala
+LM,2000,0.54,2000,1/1/00,Guyana,GUY,Guyana
+L,2000,null,2000,1/1/00,Haiti,HTI,Haiti
+LM,2000,0.547,2000,1/1/00,Honduras,HND,Honduras
+UM,2000,0.288,2000,1/1/00,Hungary,HUN,Hungary
+H,2000,0.149,2000,1/1/00,Iceland,ISL,Iceland
+L,2000,null,2000,1/1/00,India,IND,India
+L,2000,0.564,2000,1/1/00,Indonesia,IDN,Indonesia
+LM,2000,0.62,2000,1/1/00,Iraq,IRQ,Iraq
+H,2000,0.201,2000,1/1/00,Ireland,IRL,Ireland
+H,2000,0.197,2000,1/1/00,Israel,ISR,Israel
+H,2000,0.178,2000,1/1/00,Italy,ITA,Italy
+LM,2000,0.469,2000,1/1/00,Jamaica,JAM,Jamaica
+H,2000,0.135,2000,1/1/00,Japan,JPN,Japan
+LM,2000,0.632,2000,1/1/00,Jordan,JOR,Jordan
+LM,2000,0.405,2000,1/1/00,Kazakhstan,KAZ,Kazakhstan
+L,2000,0.696,2000,1/1/00,Kenya,KEN,Kenya
+H,2000,0.585,2000,1/1/00,Kuwait,KWT,Kuwait
+LM,2000,0.276,2000,1/1/00,Latvia,LVA,Latvia
+UM,2000,null,2000,1/1/00,Lebanon,LBN,Lebanon
+L,2000,0.595,2000,1/1/00,Lesotho,LSO,Lesotho
+L,2000,0.689,2000,1/1/00,Liberia,LBR,Liberia
+UM,2000,null,2000,1/1/00,Libya,LBY,Libya
+LM,2000,0.281,2000,1/1/00,Lithuania,LTU,Lithuania
+H,2000,0.175,2000,1/1/00,Luxembourg,LUX,Luxembourg
+L,2000,0.692,2000,1/1/00,Malawi,MWI,Malawi
+UM,2000,0.34,2000,1/1/00,Malaysia,MYS,Malaysia
+LM,2000,0.541,2000,1/1/00,Maldives,MDV,Maldives
+L,2000,0.725,2000,1/1/00,Mali,MLI,Mali
+H,2000,0.321,2000,1/1/00,Malta,MLT,Malta
+L,2000,0.756,2000,1/1/00,Mauritania,MRT,Mauritania
+UM,2000,0.452,2000,1/1/00,Mauritius,MUS,Mauritius
+UM,2000,0.493,2000,1/1/00,Mexico,MEX,Mexico
+L,2000,0.425,2000,1/1/00,Moldova,MDA,Moldova
+L,2000,0.45,2000,1/1/00,Mongolia,MNG,Mongolia
+..,2000,null,2000,1/1/00,Montenegro,MNE,Montenegro
+LM,2000,0.696,2000,1/1/00,Morocco,MAR,Morocco
+L,2000,0.645,2000,1/1/00,Mozambique,MOZ,Mozambique
+L,2000,null,2000,1/1/00,Myanmar,MMR,Myanmar
+LM,2000,0.546,2000,1/1/00,Namibia,NAM,Namibia
+L,2000,0.67,2000,1/1/00,Nepal,NPL,Nepal
+H,2000,0.096,2000,1/1/00,Netherlands,NLD,Netherlands
+L,2000,0.602,2000,1/1/00,Nicaragua,NIC,Nicaragua
+L,2000,0.818,2000,1/1/00,Niger,NER,Niger
+H,2000,0.109,2000,1/1/00,Norway,NOR,Norway
+UM,2000,null,2000,1/1/00,Oman,OMN,Oman
+L,2000,null,2000,1/1/00,Pakistan,PAK,Pakistan
+UM,2000,0.507,2000,1/1/00,Panama,PAN,Panama
+LM,2000,0.663,2000,1/1/00,Papua New Guinea,PNG,Papua New Guinea
+LM,2000,0.557,2000,1/1/00,Paraguay,PRY,Paraguay
+LM,2000,null,2000,1/1/00,Peru,PER,Peru
+LM,2000,0.479,2000,1/1/00,Philippines,PHL,Philippines
+UM,2000,0.205,2000,1/1/00,Poland,POL,Poland
+H,2000,0.208,2000,1/1/00,Portugal,PRT,Portugal
+H,2000,null,2000,1/1/00,Qatar,QAT,Qatar
+LM,2000,null,2000,1/1/00,Romania,ROU,Romania
+LM,2000,0.423,2000,1/1/00,Russian Federation,RUS,Russian Federation
+L,2000,0.552,2000,1/1/00,Rwanda,RWA,Rwanda
+LM,2000,0.496,2000,1/1/00,Samoa,WSM,Samoa
+UM,2000,null,2000,1/1/00,Saudi Arabia,SAU,Saudi Arabia
+L,2000,0.632,2000,1/1/00,Senegal,SEN,Senegal
+..,2000,null,2000,1/1/00,Serbia,SRB,Serbia
+L,2000,0.695,2000,1/1/00,Sierra Leone,SLE,Sierra Leone
+H,2000,0.272,2000,1/1/00,Singapore,SGP,Singapore
+H,2000,null,2000,1/1/00,Slovenia,SVN,Slovenia
+UM,2000,0.419,2000,1/1/00,South Africa,ZAF,South Africa
+H,2000,0.119,2000,1/1/00,Spain,ESP,Spain
+L,2000,null,2000,1/1/00,Sudan,SDN,Sudan
+LM,2000,null,2000,1/1/00,Suriname,SUR,Suriname
+LM,2000,0.661,2000,1/1/00,Swaziland,SWZ,Swaziland
+H,2000,0.062,2000,1/1/00,Sweden,SWE,Sweden
+H,2000,0.094,2000,1/1/00,Switzerland,CHE,Switzerland
+LM,2000,0.55,2000,1/1/00,Syrian Arab Republic,SYR,Syrian Arab Republic
+L,2000,0.41,2000,1/1/00,Tajikistan,TJK,Tajikistan
+L,2000,null,2000,1/1/00,Tanzania,TZA,Tanzania
+LM,2000,0.397,2000,1/1/00,Thailand,THA,Thailand
+L,2000,0.665,2000,1/1/00,Togo,TGO,Togo
+LM,2000,0.671,2000,1/1/00,Tonga,TON,Tonga
+UM,2000,null,2000,1/1/00,Trinidad and Tobago,TTO,Trinidad and Tobago
+LM,2000,0.427,2000,1/1/00,Tunisia,TUN,Tunisia
+UM,2000,0.589,2000,1/1/00,Turkey,TUR,Turkey
+LM,2000,null,2000,1/1/00,Turkmenistan,TKM,Turkmenistan
+L,2000,0.643,2000,1/1/00,Uganda,UGA,Uganda
+L,2000,0.384,2000,1/1/00,Ukraine,UKR,Ukraine
+H,2000,0.609,2000,1/1/00,United Arab Emirates,ARE,United Arab Emirates
+H,2000,0.215,2000,1/1/00,United Kingdom,GBR,United Kingdom
+H,2000,null,2000,1/1/00,United States,USA,United States
+UM,2000,0.389,2000,1/1/00,Uruguay,URY,Uruguay
+L,2000,null,2000,1/1/00,Uzbekistan,UZB,Uzbekistan
+L,2000,0.347,2000,1/1/00,VietNam,VNM,Vietnam
+L,2000,0.626,2000,1/1/00,Zambia,ZMB,Zambia
+L,2000,0.631,2000,1/1/00,Zimbabwe,ZWE,Zimbabwe
+L,2005,0.739,2005,1/1/05,Afghanistan,AFG,Afghanistan
+LM,2005,0.332,2005,1/1/05,Albania,ALB,Albania
+LM,2005,0.561,2005,1/1/05,Algeria,DZA,Algeria
+UM,2005,0.374,2005,1/1/05,Argentina,ARG,Argentina
+LM,2005,0.406,2005,1/1/05,Armenia,ARM,Armenia
+H,2005,0.139,2005,1/1/05,Australia,AUS,Australia
+H,2005,0.118,2005,1/1/05,Austria,AUT,Austria
+LM,2005,0.324,2005,1/1/05,Azerbaijan,AZE,Azerbaijan
+H,2005,0.358,2005,1/1/05,Bahamas,BHS,Bahamas
+H,2005,0.331,2005,1/1/05,Bahrain,BHR,Bahrain
+L,2005,0.591,2005,1/1/05,Bangladesh,BGD,Bangladesh
+UM,2005,0.345,2005,1/1/05,Barbados,BRB,Barbados
+LM,2005,null,2005,1/1/05,Belarus,BLR,Belarus
+H,2005,0.104,2005,1/1/05,Belgium,BEL,Belgium
+UM,2005,0.464,2005,1/1/05,Belize,BLZ,Belize
+L,2005,0.656,2005,1/1/05,Benin,BEN,Benin
+L,2005,null,2005,1/1/05,Bhutan,BTN,Bhutan
+LM,2005,0.559,2005,1/1/05,Bolivia,BOL,Bolivia
+LM,2005,null,2005,1/1/05,Bosnia and Herzegovina,BIH,Bosnia and Herzegovina
+UM,2005,0.523,2005,1/1/05,Botswana,BWA,Botswana
+LM,2005,0.469,2005,1/1/05,Brazil,BRA,Brazil
+LM,2005,0.251,2005,1/1/05,Bulgaria,BGR,Bulgaria
+L,2005,0.527,2005,1/1/05,Burundi,BDI,Burundi
+L,2005,0.561,2005,1/1/05,Cambodia,KHM,Cambodia
+LM,2005,0.661,2005,1/1/05,Cameroon,CMR,Cameroon
+H,2005,0.132,2005,1/1/05,Canada,CAN,Canada
+L,2005,0.684,2005,1/1/05,Central African Republic,CAF,Central African Republic
+L,2005,null,2005,1/1/05,Chad,TCD,Chad
+UM,2005,0.386,2005,1/1/05,Chile,CHL,Chile
+LM,2005,0.228,2005,1/1/05,China,CHN,China
+LM,2005,0.484,2005,1/1/05,Colombia,COL,Colombia
+L,2005,0.691,2005,1/1/05,Côte d'Ivoire,CIV,Côte d'Ivoire
+UM,2005,0.164,2005,1/1/05,Croatia,HRV,Croatia
+LM,2005,0.343,2005,1/1/05,Cuba,CUB,Cuba
+H,2005,0.14,2005,1/1/05,Cyprus,CYP,Cyprus
+UM,2005,0.153,2005,1/1/05,Czech Republic,CZE,Czech Republic
+H,2005,null,2005,1/1/05,Denmark,DNK,Denmark
+LM,2005,0.469,2005,1/1/05,Dominican Republic,DOM,Dominican Republic
+LM,2005,0.454,2005,1/1/05,Ecuador,ECU,Ecuador
+UM,2005,0.214,2005,1/1/05,Estonia,EST,Estonia
+L,2005,0.611,2005,1/1/05,Ethiopia,ETH,Ethiopia
+LM,2005,0.409,2005,1/1/05,Fiji,FJI,Fiji
+H,2005,0.088,2005,1/1/05,Finland,FIN,Finland
+H,2005,0.156,2005,1/1/05,France,FRA,France
+UM,2005,0.574,2005,1/1/05,Gabon,GAB,Gabon
+LM,2005,0.388,2005,1/1/05,Georgia,GEO,Georgia
+H,2005,0.117,2005,1/1/05,Germany,DEU,Germany
+L,2005,0.573,2005,1/1/05,Ghana,GHA,Ghana
+H,2005,0.179,2005,1/1/05,Greece,GRC,Greece
+LM,2005,0.57,2005,1/1/05,Guatemala,GTM,Guatemala
+LM,2005,0.527,2005,1/1/05,Guyana,GUY,Guyana
+L,2005,0.579,2005,1/1/05,Haiti,HTI,Haiti
+LM,2005,0.515,2005,1/1/05,Honduras,HND,Honduras
+UM,2005,0.26,2005,1/1/05,Hungary,HUN,Hungary
+H,2005,0.125,2005,1/1/05,Iceland,ISL,Iceland
+L,2005,0.619,2005,1/1/05,India,IND,India
+LM,2005,0.533,2005,1/1/05,Indonesia,IDN,Indonesia
+LM,2005,null,2005,1/1/05,Iraq,IRQ,Iraq
+H,2005,0.192,2005,1/1/05,Ireland,IRL,Ireland
+H,2005,0.173,2005,1/1/05,Israel,ISR,Israel
+H,2005,0.175,2005,1/1/05,Italy,ITA,Italy
+LM,2005,0.466,2005,1/1/05,Jamaica,JAM,Jamaica
+H,2005,0.148,2005,1/1/05,Japan,JPN,Japan
+LM,2005,0.557,2005,1/1/05,Jordan,JOR,Jordan
+LM,2005,0.36,2005,1/1/05,Kazakhstan,KAZ,Kazakhstan
+L,2005,0.654,2005,1/1/05,Kenya,KEN,Kenya
+H,2005,0.374,2005,1/1/05,Kuwait,KWT,Kuwait
+UM,2005,0.217,2005,1/1/05,Latvia,LVA,Latvia
+UM,2005,null,2005,1/1/05,Lebanon,LBN,Lebanon
+LM,2005,0.585,2005,1/1/05,Lesotho,LSO,Lesotho
+L,2005,0.676,2005,1/1/05,Liberia,LBR,Liberia
+UM,2005,0.268,2005,1/1/05,Libya,LBY,Libya
+UM,2005,0.185,2005,1/1/05,Lithuania,LTU,Lithuania
+H,2005,0.156,2005,1/1/05,Luxembourg,LUX,Luxembourg
+L,2005,0.655,2005,1/1/05,Malawi,MWI,Malawi
+UM,2005,0.324,2005,1/1/05,Malaysia,MYS,Malaysia
+LM,2005,0.42,2005,1/1/05,Maldives,MDV,Maldives
+L,2005,0.723,2005,1/1/05,Mali,MLI,Mali
+H,2005,0.309,2005,1/1/05,Malta,MLT,Malta
+L,2005,null,2005,1/1/05,Mauritania,MRT,Mauritania
+UM,2005,0.369,2005,1/1/05,Mauritius,MUS,Mauritius
+UM,2005,0.431,2005,1/1/05,Mexico,MEX,Mexico
+LM,2005,0.292,2005,1/1/05,Moldova,MDA,Moldova
+L,2005,0.41,2005,1/1/05,Mongolia,MNG,Mongolia
+..,2005,null,2005,1/1/05,Montenegro,MNE,Montenegro
+LM,2005,0.58,2005,1/1/05,Morocco,MAR,Morocco
+L,2005,0.638,2005,1/1/05,Mozambique,MOZ,Mozambique
+L,2005,null,2005,1/1/05,Myanmar,MMR,Myanmar
+LM,2005,0.525,2005,1/1/05,Namibia,NAM,Namibia
+L,2005,0.653,2005,1/1/05,Nepal,NPL,Nepal
+H,2005,0.082,2005,1/1/05,Netherlands,NLD,Netherlands
+LM,2005,0.541,2005,1/1/05,Nicaragua,NIC,Nicaragua
+L,2005,0.73,2005,1/1/05,Niger,NER,Niger
+H,2005,0.085,2005,1/1/05,Norway,NOR,Norway
+UM,2005,0.387,2005,1/1/05,Oman,OMN,Oman
+L,2005,0.595,2005,1/1/05,Pakistan,PAK,Pakistan
+UM,2005,0.472,2005,1/1/05,Panama,PAN,Panama
+L,2005,0.682,2005,1/1/05,Papua New Guinea,PNG,Papua New Guinea
+LM,2005,0.537,2005,1/1/05,Paraguay,PRY,Paraguay
+LM,2005,0.456,2005,1/1/05,Peru,PER,Peru
+LM,2005,0.467,2005,1/1/05,Philippines,PHL,Philippines
+UM,2005,0.164,2005,1/1/05,Poland,POL,Poland
+H,2005,0.182,2005,1/1/05,Portugal,PRT,Portugal
+H,2005,null,2005,1/1/05,Qatar,QAT,Qatar
+UM,2005,0.355,2005,1/1/05,Romania,ROU,Romania
+UM,2005,0.359,2005,1/1/05,Russian Federation,RUS,Russian Federation
+L,2005,0.484,2005,1/1/05,Rwanda,RWA,Rwanda
+LM,2005,0.493,2005,1/1/05,Samoa,WSM,Samoa
+H,2005,0.672,2005,1/1/05,Saudi Arabia,SAU,Saudi Arabia
+L,2005,0.629,2005,1/1/05,Senegal,SEN,Senegal
+..,2005,null,2005,1/1/05,Serbia,SRB,Serbia
+L,2005,0.669,2005,1/1/05,Sierra Leone,SLE,Sierra Leone
+H,2005,0.167,2005,1/1/05,Singapore,SGP,Singapore
+H,2005,0.139,2005,1/1/05,Slovenia,SVN,Slovenia
+UM,2005,0.426,2005,1/1/05,South Africa,ZAF,South Africa
+H,2005,0.118,2005,1/1/05,Spain,ESP,Spain
+L,2005,0.665,2005,1/1/05,Sudan,SDN,Sudan
+LM,2005,0.492,2005,1/1/05,Suriname,SUR,Suriname
+LM,2005,0.619,2005,1/1/05,Swaziland,SWZ,Swaziland
+H,2005,0.053,2005,1/1/05,Sweden,SWE,Sweden
+H,2005,0.073,2005,1/1/05,Switzerland,CHE,Switzerland
+LM,2005,0.54,2005,1/1/05,Syrian Arab Republic,SYR,Syrian Arab Republic
+L,2005,0.345,2005,1/1/05,Tajikistan,TJK,Tajikistan
+L,2005,0.592,2005,1/1/05,Tanzania,TZA,Tanzania
+LM,2005,0.348,2005,1/1/05,Thailand,THA,Thailand
+L,2005,0.633,2005,1/1/05,Togo,TGO,Togo
+LM,2005,0.476,2005,1/1/05,Tonga,TON,Tonga
+UM,2005,0.353,2005,1/1/05,Trinidad and Tobago,TTO,Trinidad and Tobago
+LM,2005,0.336,2005,1/1/05,Tunisia,TUN,Tunisia
+UM,2005,0.564,2005,1/1/05,Turkey,TUR,Turkey
+LM,2005,null,2005,1/1/05,Turkmenistan,TKM,Turkmenistan
+L,2005,0.592,2005,1/1/05,Uganda,UGA,Uganda
+LM,2005,0.37,2005,1/1/05,Ukraine,UKR,Ukraine
+H,2005,0.591,2005,1/1/05,United Arab Emirates,ARE,United Arab Emirates
+H,2005,0.206,2005,1/1/05,United Kingdom,GBR,United Kingdom
+H,2005,0.264,2005,1/1/05,United States,USA,United States
+UM,2005,0.373,2005,1/1/05,Uruguay,URY,Uruguay
+L,2005,null,2005,1/1/05,Uzbekistan,UZB,Uzbekistan
+L,2005,0.317,2005,1/1/05,VietNam,VNM,Vietnam
+L,2005,0.593,2005,1/1/05,Zambia,ZMB,Zambia
+L,2005,0.589,2005,1/1/05,Zimbabwe,ZWE,Zimbabwe
+L,2010,0.724,2010,1/1/10,Afghanistan,AFG,Afghanistan
+UM,2010,0.273,2010,1/1/10,Albania,ALB,Albania
+UM,2010,0.523,2010,1/1/10,Algeria,DZA,Algeria
+UM,2010,0.37,2010,1/1/10,Argentina,ARG,Argentina
+LM,2010,0.344,2010,1/1/10,Armenia,ARM,Armenia
+H,2010,0.138,2010,1/1/10,Australia,AUS,Australia
+H,2010,0.111,2010,1/1/10,Austria,AUT,Austria
+UM,2010,0.317,2010,1/1/10,Azerbaijan,AZE,Azerbaijan
+H,2010,0.383,2010,1/1/10,Bahamas,BHS,Bahamas
+H,2010,0.241,2010,1/1/10,Bahrain,BHR,Bahrain
+L,2010,0.559,2010,1/1/10,Bangladesh,BGD,Bangladesh
+H,2010,0.321,2010,1/1/10,Barbados,BRB,Barbados
+UM,2010,0.151,2010,1/1/10,Belarus,BLR,Belarus
+H,2010,0.093,2010,1/1/10,Belgium,BEL,Belgium
+LM,2010,0.423,2010,1/1/10,Belize,BLZ,Belize
+L,2010,0.621,2010,1/1/10,Benin,BEN,Benin
+LM,2010,null,2010,1/1/10,Bhutan,BTN,Bhutan
+LM,2010,0.503,2010,1/1/10,Bolivia,BOL,Bolivia
+UM,2010,0.239,2010,1/1/10,Bosnia and Herzegovina,BIH,Bosnia and Herzegovina
+UM,2010,0.496,2010,1/1/10,Botswana,BWA,Botswana
+UM,2010,0.454,2010,1/1/10,Brazil,BRA,Brazil
+UM,2010,0.232,2010,1/1/10,Bulgaria,BGR,Bulgaria
+L,2010,0.502,2010,1/1/10,Burundi,BDI,Burundi
+L,2010,0.492,2010,1/1/10,Cambodia,KHM,Cambodia
+LM,2010,0.623,2010,1/1/10,Cameroon,CMR,Cameroon
+H,2010,0.127,2010,1/1/10,Canada,CAN,Canada
+L,2010,0.674,2010,1/1/10,Central African Republic,CAF,Central African Republic
+L,2010,null,2010,1/1/10,Chad,TCD,Chad
+UM,2010,0.359,2010,1/1/10,Chile,CHL,Chile
+UM,2010,0.197,2010,1/1/10,China,CHN,China
+UM,2010,0.437,2010,1/1/10,Colombia,COL,Colombia
+LM,2010,0.683,2010,1/1/10,Côte d'Ivoire,CIV,Côte d'Ivoire
+H,2010,0.146,2010,1/1/10,Croatia,HRV,Croatia
+UM,2010,0.328,2010,1/1/10,Cuba,CUB,Cuba
+H,2010,0.134,2010,1/1/10,Cyprus,CYP,Cyprus
+H,2010,0.135,2010,1/1/10,Czech Republic,CZE,Czech Republic
+H,2010,0.056,2010,1/1/10,Denmark,DNK,Denmark
+UM,2010,0.467,2010,1/1/10,Dominican Republic,DOM,Dominican Republic
+UM,2010,0.421,2010,1/1/10,Ecuador,ECU,Ecuador
+H,2010,0.168,2010,1/1/10,Estonia,EST,Estonia
+L,2010,0.576,2010,1/1/10,Ethiopia,ETH,Ethiopia
+LM,2010,null,2010,1/1/10,Fiji,FJI,Fiji
+H,2010,0.077,2010,1/1/10,Finland,FIN,Finland
+H,2010,0.125,2010,1/1/10,France,FRA,France
+UM,2010,0.558,2010,1/1/10,Gabon,GAB,Gabon
+LM,2010,0.42,2010,1/1/10,Georgia,GEO,Georgia
+H,2010,0.097,2010,1/1/10,Germany,DEU,Germany
+LM,2010,0.57,2010,1/1/10,Ghana,GHA,Ghana
+H,2010,0.159,2010,1/1/10,Greece,GRC,Greece
+LM,2010,0.54,2010,1/1/10,Guatemala,GTM,Guatemala
+LM,2010,0.522,2010,1/1/10,Guyana,GUY,Guyana
+L,2010,null,2010,1/1/10,Haiti,HTI,Haiti
+LM,2010,0.513,2010,1/1/10,Honduras,HND,Honduras
+H,2010,0.255,2010,1/1/10,Hungary,HUN,Hungary
+H,2010,0.099,2010,1/1/10,Iceland,ISL,Iceland
+LM,2010,0.591,2010,1/1/10,India,IND,India
+LM,2010,0.486,2010,1/1/10,Indonesia,IDN,Indonesia
+LM,2010,0.536,2010,1/1/10,Iraq,IRQ,Iraq
+H,2010,0.171,2010,1/1/10,Ireland,IRL,Ireland
+H,2010,0.149,2010,1/1/10,Israel,ISR,Israel
+H,2010,0.124,2010,1/1/10,Italy,ITA,Italy
+UM,2010,0.455,2010,1/1/10,Jamaica,JAM,Jamaica
+H,2010,0.12,2010,1/1/10,Japan,JPN,Japan
+UM,2010,0.488,2010,1/1/10,Jordan,JOR,Jordan
+UM,2010,0.267,2010,1/1/10,Kazakhstan,KAZ,Kazakhstan
+L,2010,0.616,2010,1/1/10,Kenya,KEN,Kenya
+H,2010,0.236,2010,1/1/10,Kuwait,KWT,Kuwait
+UM,2010,0.208,2010,1/1/10,Latvia,LVA,Latvia
+UM,2010,0.404,2010,1/1/10,Lebanon,LBN,Lebanon
+LM,2010,0.569,2010,1/1/10,Lesotho,LSO,Lesotho
+L,2010,0.661,2010,1/1/10,Liberia,LBR,Liberia
+UM,2010,0.215,2010,1/1/10,Libya,LBY,Libya
+UM,2010,0.168,2010,1/1/10,Lithuania,LTU,Lithuania
+H,2010,0.132,2010,1/1/10,Luxembourg,LUX,Luxembourg
+L,2010,0.616,2010,1/1/10,Malawi,MWI,Malawi
+UM,2010,0.308,2010,1/1/10,Malaysia,MYS,Malaysia
+UM,2010,0.383,2010,1/1/10,Maldives,MDV,Maldives
+L,2010,0.677,2010,1/1/10,Mali,MLI,Mali
+H,2010,0.277,2010,1/1/10,Malta,MLT,Malta
+LM,2010,0.656,2010,1/1/10,Mauritania,MRT,Mauritania
+UM,2010,0.382,2010,1/1/10,Mauritius,MUS,Mauritius
+UM,2010,0.401,2010,1/1/10,Mexico,MEX,Mexico
+LM,2010,0.286,2010,1/1/10,Moldova,MDA,Moldova
+LM,2010,0.406,2010,1/1/10,Mongolia,MNG,Mongolia
+UM,2010,0.218,2010,1/1/10,Montenegro,MNE,Montenegro
+LM,2010,0.563,2010,1/1/10,Morocco,MAR,Morocco
+L,2010,0.617,2010,1/1/10,Mozambique,MOZ,Mozambique
+L,2010,0.459,2010,1/1/10,Myanmar,MMR,Myanmar
+UM,2010,0.512,2010,1/1/10,Namibia,NAM,Namibia
+L,2010,0.537,2010,1/1/10,Nepal,NPL,Nepal
+H,2010,0.054,2010,1/1/10,Netherlands,NLD,Netherlands
+LM,2010,0.52,2010,1/1/10,Nicaragua,NIC,Nicaragua
+L,2010,null,2010,1/1/10,Niger,NER,Niger
+H,2010,0.075,2010,1/1/10,Norway,NOR,Norway
+H,2010,0.323,2010,1/1/10,Oman,OMN,Oman
+LM,2010,0.57,2010,1/1/10,Pakistan,PAK,Pakistan
+UM,2010,0.515,2010,1/1/10,Panama,PAN,Panama
+LM,2010,0.667,2010,1/1/10,Papua New Guinea,PNG,Papua New Guinea
+LM,2010,0.501,2010,1/1/10,Paraguay,PRY,Paraguay
+UM,2010,0.406,2010,1/1/10,Peru,PER,Peru
+LM,2010,0.449,2010,1/1/10,Philippines,PHL,Philippines
+H,2010,0.17,2010,1/1/10,Poland,POL,Poland
+H,2010,0.141,2010,1/1/10,Portugal,PRT,Portugal
+H,2010,0.579,2010,1/1/10,Qatar,QAT,Qatar
+UM,2010,0.358,2010,1/1/10,Romania,ROU,Romania
+UM,2010,0.315,2010,1/1/10,Russian Federation,RUS,Russian Federation
+L,2010,0.444,2010,1/1/10,Rwanda,RWA,Rwanda
+LM,2010,0.456,2010,1/1/10,Samoa,WSM,Samoa
+H,2010,0.633,2010,1/1/10,Saudi Arabia,SAU,Saudi Arabia
+LM,2010,0.575,2010,1/1/10,Senegal,SEN,Senegal
+UM,2010,0.22,2010,1/1/10,Serbia,SRB,Serbia
+L,2010,0.665,2010,1/1/10,Sierra Leone,SLE,Sierra Leone
+H,2010,0.099,2010,1/1/10,Singapore,SGP,Singapore
+H,2010,0.124,2010,1/1/10,Slovenia,SVN,Slovenia
+UM,2010,0.423,2010,1/1/10,South Africa,ZAF,South Africa
+H,2010,0.113,2010,1/1/10,Spain,ESP,Spain
+LM,2010,0.622,2010,1/1/10,Sudan,SDN,Sudan
+UM,2010,0.514,2010,1/1/10,Suriname,SUR,Suriname
+LM,2010,0.572,2010,1/1/10,Swaziland,SWZ,Swaziland
+H,2010,0.051,2010,1/1/10,Sweden,SWE,Sweden
+H,2010,0.062,2010,1/1/10,Switzerland,CHE,Switzerland
+LM,2010,0.539,2010,1/1/10,Syrian Arab Republic,SYR,Syrian Arab Republic
+L,2010,0.33,2010,1/1/10,Tajikistan,TJK,Tajikistan
+L,2010,null,2010,1/1/10,Tanzania,TZA,Tanzania
+UM,2010,0.319,2010,1/1/10,Thailand,THA,Thailand
+L,2010,0.598,2010,1/1/10,Togo,TGO,Togo
+LM,2010,0.673,2010,1/1/10,Tonga,TON,Tonga
+H,2010,0.353,2010,1/1/10,Trinidad and Tobago,TTO,Trinidad and Tobago
+UM,2010,0.309,2010,1/1/10,Tunisia,TUN,Tunisia
+UM,2010,0.426,2010,1/1/10,Turkey,TUR,Turkey
+LM,2010,null,2010,1/1/10,Turkmenistan,TKM,Turkmenistan
+L,2010,0.564,2010,1/1/10,Uganda,UGA,Uganda
+LM,2010,0.334,2010,1/1/10,Ukraine,UKR,Ukraine
+H,2010,0.231,2010,1/1/10,United Arab Emirates,ARE,United Arab Emirates
+H,2010,0.184,2010,1/1/10,United Kingdom,GBR,United Kingdom
+H,2010,0.254,2010,1/1/10,United States,USA,United States
+UM,2010,0.327,2010,1/1/10,Uruguay,URY,Uruguay
+LM,2010,null,2010,1/1/10,Uzbekistan,UZB,Uzbekistan
+LM,2010,0.324,2010,1/1/10,VietNam,VNM,Vietnam
+LM,2010,0.553,2010,1/1/10,Zambia,ZMB,Zambia
+L,2010,0.581,2010,1/1/10,Zimbabwe,ZWE,Zimbabwe
+L,2011,0.713,2011,1/1/11,Afghanistan,AFG,Afghanistan
+LM,2011,0.279,2011,1/1/11,Albania,ALB,Albania
+UM,2011,0.514,2011,1/1/11,Algeria,DZA,Algeria
+UM,2011,0.367,2011,1/1/11,Argentina,ARG,Argentina
+LM,2011,0.338,2011,1/1/11,Armenia,ARM,Armenia
+H,2011,0.133,2011,1/1/11,Australia,AUS,Australia
+H,2011,0.105,2011,1/1/11,Austria,AUT,Austria
+UM,2011,0.319,2011,1/1/11,Azerbaijan,AZE,Azerbaijan
+H,2011,0.381,2011,1/1/11,Bahamas,BHS,Bahamas
+H,2011,0.225,2011,1/1/11,Bahrain,BHR,Bahrain
+L,2011,0.549,2011,1/1/11,Bangladesh,BGD,Bangladesh
+H,2011,0.313,2011,1/1/11,Barbados,BRB,Barbados
+UM,2011,0.148,2011,1/1/11,Belarus,BLR,Belarus
+H,2011,0.09,2011,1/1/11,Belgium,BEL,Belgium
+LM,2011,0.411,2011,1/1/11,Belize,BLZ,Belize
+L,2011,0.627,2011,1/1/11,Benin,BEN,Benin
+LM,2011,null,2011,1/1/11,Bhutan,BTN,Bhutan
+LM,2011,0.498,2011,1/1/11,Bolivia,BOL,Bolivia
+UM,2011,0.21,2011,1/1/11,Bosnia and Herzegovina,BIH,Bosnia and Herzegovina
+UM,2011,0.486,2011,1/1/11,Botswana,BWA,Botswana
+UM,2011,0.448,2011,1/1/11,Brazil,BRA,Brazil
+UM,2011,0.229,2011,1/1/11,Bulgaria,BGR,Bulgaria
+L,2011,0.499,2011,1/1/11,Burundi,BDI,Burundi
+L,2011,0.488,2011,1/1/11,Cambodia,KHM,Cambodia
+LM,2011,0.618,2011,1/1/11,Cameroon,CMR,Cameroon
+H,2011,0.118,2011,1/1/11,Canada,CAN,Canada
+L,2011,0.659,2011,1/1/11,Central African Republic,CAF,Central African Republic
+L,2011,null,2011,1/1/11,Chad,TCD,Chad
+UM,2011,0.352,2011,1/1/11,Chile,CHL,Chile
+UM,2011,0.191,2011,1/1/11,China,CHN,China
+UM,2011,0.431,2011,1/1/11,Colombia,COL,Colombia
+LM,2011,0.673,2011,1/1/11,Côte d'Ivoire,CIV,Côte d'Ivoire
+H,2011,0.142,2011,1/1/11,Croatia,HRV,Croatia
+UM,2011,0.322,2011,1/1/11,Cuba,CUB,Cuba
+H,2011,0.14,2011,1/1/11,Cyprus,CYP,Cyprus
+H,2011,0.132,2011,1/1/11,Czech Republic,CZE,Czech Republic
+H,2011,0.051,2011,1/1/11,Denmark,DNK,Denmark
+UM,2011,0.493,2011,1/1/11,Dominican Republic,DOM,Dominican Republic
+UM,2011,0.424,2011,1/1/11,Ecuador,ECU,Ecuador
+H,2011,0.171,2011,1/1/11,Estonia,EST,Estonia
+L,2011,0.568,2011,1/1/11,Ethiopia,ETH,Ethiopia
+LM,2011,null,2011,1/1/11,Fiji,FJI,Fiji
+H,2011,0.072,2011,1/1/11,Finland,FIN,Finland
+H,2011,0.123,2011,1/1/11,France,FRA,France
+UM,2011,0.556,2011,1/1/11,Gabon,GAB,Gabon
+LM,2011,0.416,2011,1/1/11,Georgia,GEO,Georgia
+H,2011,0.092,2011,1/1/11,Germany,DEU,Germany
+LM,2011,0.567,2011,1/1/11,Ghana,GHA,Ghana
+H,2011,0.148,2011,1/1/11,Greece,GRC,Greece
+LM,2011,0.531,2011,1/1/11,Guatemala,GTM,Guatemala
+LM,2011,0.518,2011,1/1/11,Guyana,GUY,Guyana
+L,2011,0.597,2011,1/1/11,Haiti,HTI,Haiti
+LM,2011,0.504,2011,1/1/11,Honduras,HND,Honduras
+H,2011,0.261,2011,1/1/11,Hungary,HUN,Hungary
+H,2011,0.095,2011,1/1/11,Iceland,ISL,Iceland
+LM,2011,0.582,2011,1/1/11,India,IND,India
+LM,2011,0.481,2011,1/1/11,Indonesia,IDN,Indonesia
+LM,2011,0.534,2011,1/1/11,Iraq,IRQ,Iraq
+H,2011,0.155,2011,1/1/11,Ireland,IRL,Ireland
+H,2011,0.141,2011,1/1/11,Israel,ISR,Israel
+H,2011,0.12,2011,1/1/11,Italy,ITA,Italy
+UM,2011,0.443,2011,1/1/11,Jamaica,JAM,Jamaica
+H,2011,0.119,2011,1/1/11,Japan,JPN,Japan
+UM,2011,0.489,2011,1/1/11,Jordan,JOR,Jordan
+UM,2011,0.254,2011,1/1/11,Kazakhstan,KAZ,Kazakhstan
+L,2011,0.613,2011,1/1/11,Kenya,KEN,Kenya
+H,2011,0.234,2011,1/1/11,Kuwait,KWT,Kuwait
+UM,2011,0.204,2011,1/1/11,Latvia,LVA,Latvia
+UM,2011,0.398,2011,1/1/11,Lebanon,LBN,Lebanon
+LM,2011,0.563,2011,1/1/11,Lesotho,LSO,Lesotho
+L,2011,0.668,2011,1/1/11,Liberia,LBR,Liberia
+UM,2011,null,2011,1/1/11,Libya,LBY,Libya
+UM,2011,0.169,2011,1/1/11,Lithuania,LTU,Lithuania
+H,2011,0.112,2011,1/1/11,Luxembourg,LUX,Luxembourg
+L,2011,0.609,2011,1/1/11,Malawi,MWI,Malawi
+UM,2011,0.31,2011,1/1/11,Malaysia,MYS,Malaysia
+UM,2011,0.369,2011,1/1/11,Maldives,MDV,Maldives
+L,2011,0.681,2011,1/1/11,Mali,MLI,Mali
+H,2011,0.274,2011,1/1/11,Malta,MLT,Malta
+L,2011,0.652,2011,1/1/11,Mauritania,MRT,Mauritania
+UM,2011,0.37,2011,1/1/11,Mauritius,MUS,Mauritius
+UM,2011,0.393,2011,1/1/11,Mexico,MEX,Mexico
+LM,2011,0.257,2011,1/1/11,Moldova,MDA,Moldova
+LM,2011,0.397,2011,1/1/11,Mongolia,MNG,Mongolia
+UM,2011,0.203,2011,1/1/11,Montenegro,MNE,Montenegro
+LM,2011,0.53,2011,1/1/11,Morocco,MAR,Morocco
+L,2011,0.607,2011,1/1/11,Mozambique,MOZ,Mozambique
+L,2011,0.476,2011,1/1/11,Myanmar,MMR,Myanmar
+UM,2011,0.51,2011,1/1/11,Namibia,NAM,Namibia
+L,2011,0.528,2011,1/1/11,Nepal,NPL,Nepal
+H,2011,0.05,2011,1/1/11,Netherlands,NLD,Netherlands
+LM,2011,0.477,2011,1/1/11,Nicaragua,NIC,Nicaragua
+L,2011,0.712,2011,1/1/11,Niger,NER,Niger
+H,2011,0.071,2011,1/1/11,Norway,NOR,Norway
+H,2011,0.311,2011,1/1/11,Oman,OMN,Oman
+LM,2011,0.569,2011,1/1/11,Pakistan,PAK,Pakistan
+UM,2011,0.517,2011,1/1/11,Panama,PAN,Panama
+LM,2011,0.662,2011,1/1/11,Papua New Guinea,PNG,Papua New Guinea
+LM,2011,0.499,2011,1/1/11,Paraguay,PRY,Paraguay
+UM,2011,0.412,2011,1/1/11,Peru,PER,Peru
+LM,2011,null,2011,1/1/11,Philippines,PHL,Philippines
+H,2011,0.155,2011,1/1/11,Poland,POL,Poland
+H,2011,0.128,2011,1/1/11,Portugal,PRT,Portugal
+H,2011,0.554,2011,1/1/11,Qatar,QAT,Qatar
+UM,2011,0.355,2011,1/1/11,Romania,ROU,Romania
+UM,2011,0.308,2011,1/1/11,Russian Federation,RUS,Russian Federation
+L,2011,0.433,2011,1/1/11,Rwanda,RWA,Rwanda
+LM,2011,0.491,2011,1/1/11,Samoa,WSM,Samoa
+H,2011,0.623,2011,1/1/11,Saudi Arabia,SAU,Saudi Arabia
+LM,2011,0.567,2011,1/1/11,Senegal,SEN,Senegal
+UM,2011,0.217,2011,1/1/11,Serbia,SRB,Serbia
+L,2011,0.662,2011,1/1/11,Sierra Leone,SLE,Sierra Leone
+H,2011,0.102,2011,1/1/11,Singapore,SGP,Singapore
+H,2011,0.073,2011,1/1/11,Slovenia,SVN,Slovenia
+UM,2011,0.419,2011,1/1/11,South Africa,ZAF,South Africa
+H,2011,0.106,2011,1/1/11,Spain,ESP,Spain
+LM,2011,0.616,2011,1/1/11,Sudan,SDN,Sudan
+UM,2011,0.498,2011,1/1/11,Suriname,SUR,Suriname
+LM,2011,0.565,2011,1/1/11,Swaziland,SWZ,Swaziland
+H,2011,0.049,2011,1/1/11,Sweden,SWE,Sweden
+H,2011,0.06,2011,1/1/11,Switzerland,CHE,Switzerland
+LM,2011,0.542,2011,1/1/11,Syrian Arab Republic,SYR,Syrian Arab Republic
+L,2011,0.328,2011,1/1/11,Tajikistan,TJK,Tajikistan
+L,2011,0.558,2011,1/1/11,Tanzania,TZA,Tanzania
+UM,2011,0.307,2011,1/1/11,Thailand,THA,Thailand
+L,2011,0.589,2011,1/1/11,Togo,TGO,Togo
+LM,2011,0.472,2011,1/1/11,Tonga,TON,Tonga
+H,2011,0.349,2011,1/1/11,Trinidad and Tobago,TTO,Trinidad and Tobago
+UM,2011,0.301,2011,1/1/11,Tunisia,TUN,Tunisia
+UM,2011,0.381,2011,1/1/11,Turkey,TUR,Turkey
+UM,2011,null,2011,1/1/11,Turkmenistan,TKM,Turkmenistan
+L,2011,0.552,2011,1/1/11,Uganda,UGA,Uganda
+LM,2011,0.329,2011,1/1/11,Ukraine,UKR,Ukraine
+H,2011,0.246,2011,1/1/11,United Arab Emirates,ARE,United Arab Emirates
+H,2011,0.174,2011,1/1/11,United Kingdom,GBR,United Kingdom
+H,2011,0.248,2011,1/1/11,United States,USA,United States
+UM,2011,0.326,2011,1/1/11,Uruguay,URY,Uruguay
+LM,2011,null,2011,1/1/11,Uzbekistan,UZB,Uzbekistan
+LM,2011,0.328,2011,1/1/11,VietNam,VNM,Vietnam
+LM,2011,0.556,2011,1/1/11,Zambia,ZMB,Zambia
+L,2011,0.575,2011,1/1/11,Zimbabwe,ZWE,Zimbabwe
+L,2012,0.701,2012,1/1/12,Afghanistan,AFG,Afghanistan
+UM,2012,0.281,2012,1/1/12,Albania,ALB,Albania
+UM,2012,0.432,2012,1/1/12,Algeria,DZA,Algeria
+UM,2012,0.366,2012,1/1/12,Argentina,ARG,Argentina
+LM,2012,0.317,2012,1/1/12,Armenia,ARM,Armenia
+H,2012,0.131,2012,1/1/12,Australia,AUS,Australia
+H,2012,0.1,2012,1/1/12,Austria,AUT,Austria
+UM,2012,0.319,2012,1/1/12,Azerbaijan,AZE,Azerbaijan
+H,2012,0.377,2012,1/1/12,Bahamas,BHS,Bahamas
+H,2012,0.225,2012,1/1/12,Bahrain,BHR,Bahrain
+L,2012,0.542,2012,1/1/12,Bangladesh,BGD,Bangladesh
+H,2012,0.307,2012,1/1/12,Barbados,BRB,Barbados
+UM,2012,0.151,2012,1/1/12,Belarus,BLR,Belarus
+H,2012,0.087,2012,1/1/12,Belgium,BEL,Belgium
+UM,2012,0.394,2012,1/1/12,Belize,BLZ,Belize
+L,2012,0.621,2012,1/1/12,Benin,BEN,Benin
+LM,2012,0.487,2012,1/1/12,Bhutan,BTN,Bhutan
+LM,2012,0.492,2012,1/1/12,Bolivia,BOL,Bolivia
+UM,2012,0.199,2012,1/1/12,Bosnia and Herzegovina,BIH,Bosnia and Herzegovina
+UM,2012,0.478,2012,1/1/12,Botswana,BWA,Botswana
+UM,2012,0.448,2012,1/1/12,Brazil,BRA,Brazil
+UM,2012,0.214,2012,1/1/12,Bulgaria,BGR,Bulgaria
+L,2012,0.494,2012,1/1/12,Burundi,BDI,Burundi
+L,2012,0.486,2012,1/1/12,Cambodia,KHM,Cambodia
+LM,2012,0.613,2012,1/1/12,Cameroon,CMR,Cameroon
+H,2012,0.113,2012,1/1/12,Canada,CAN,Canada
+L,2012,0.656,2012,1/1/12,Central African Republic,CAF,Central African Republic
+L,2012,null,2012,1/1/12,Chad,TCD,Chad
+H,2012,0.347,2012,1/1/12,Chile,CHL,Chile
+UM,2012,0.184,2012,1/1/12,China,CHN,China
+UM,2012,0.424,2012,1/1/12,Colombia,COL,Colombia
+LM,2012,0.674,2012,1/1/12,Côte d'Ivoire,CIV,Côte d'Ivoire
+H,2012,0.135,2012,1/1/12,Croatia,HRV,Croatia
+UM,2012,0.317,2012,1/1/12,Cuba,CUB,Cuba
+H,2012,0.138,2012,1/1/12,Cyprus,CYP,Cyprus
+H,2012,0.131,2012,1/1/12,Czech Republic,CZE,Czech Republic
+H,2012,0.048,2012,1/1/12,Denmark,DNK,Denmark
+UM,2012,0.447,2012,1/1/12,Dominican Republic,DOM,Dominican Republic
+UM,2012,0.418,2012,1/1/12,Ecuador,ECU,Ecuador
+H,2012,0.162,2012,1/1/12,Estonia,EST,Estonia
+L,2012,0.56,2012,1/1/12,Ethiopia,ETH,Ethiopia
+UM,2012,null,2012,1/1/12,Fiji,FJI,Fiji
+H,2012,0.068,2012,1/1/12,Finland,FIN,Finland
+H,2012,0.108,2012,1/1/12,France,FRA,France
+UM,2012,0.552,2012,1/1/12,Gabon,GAB,Gabon
+LM,2012,0.375,2012,1/1/12,Georgia,GEO,Georgia
+H,2012,0.087,2012,1/1/12,Germany,DEU,Germany
+LM,2012,null,2012,1/1/12,Ghana,GHA,Ghana
+H,2012,0.134,2012,1/1/12,Greece,GRC,Greece
+LM,2012,0.523,2012,1/1/12,Guatemala,GTM,Guatemala
+LM,2012,0.515,2012,1/1/12,Guyana,GUY,Guyana
+L,2012,0.603,2012,1/1/12,Haiti,HTI,Haiti
+LM,2012,0.495,2012,1/1/12,Honduras,HND,Honduras
+UM,2012,0.259,2012,1/1/12,Hungary,HUN,Hungary
+H,2012,0.085,2012,1/1/12,Iceland,ISL,Iceland
+LM,2012,0.573,2012,1/1/12,India,IND,India
+LM,2012,0.476,2012,1/1/12,Indonesia,IDN,Indonesia
+UM,2012,0.532,2012,1/1/12,Iraq,IRQ,Iraq
+H,2012,0.149,2012,1/1/12,Ireland,IRL,Ireland
+H,2012,0.136,2012,1/1/12,Israel,ISR,Israel
+H,2012,0.116,2012,1/1/12,Italy,ITA,Italy
+UM,2012,0.439,2012,1/1/12,Jamaica,JAM,Jamaica
+H,2012,0.127,2012,1/1/12,Japan,JPN,Japan
+UM,2012,0.487,2012,1/1/12,Jordan,JOR,Jordan
+UM,2012,0.226,2012,1/1/12,Kazakhstan,KAZ,Kazakhstan
+L,2012,0.61,2012,1/1/12,Kenya,KEN,Kenya
+H,2012,0.247,2012,1/1/12,Kuwait,KWT,Kuwait
+H,2012,0.188,2012,1/1/12,Latvia,LVA,Latvia
+UM,2012,0.393,2012,1/1/12,Lebanon,LBN,Lebanon
+LM,2012,0.556,2012,1/1/12,Lesotho,LSO,Lesotho
+L,2012,0.66,2012,1/1/12,Liberia,LBR,Liberia
+UM,2012,0.166,2012,1/1/12,Libya,LBY,Libya
+H,2012,0.141,2012,1/1/12,Lithuania,LTU,Lithuania
+H,2012,0.114,2012,1/1/12,Luxembourg,LUX,Luxembourg
+L,2012,0.607,2012,1/1/12,Malawi,MWI,Malawi
+UM,2012,0.303,2012,1/1/12,Malaysia,MYS,Malaysia
+UM,2012,0.353,2012,1/1/12,Maldives,MDV,Maldives
+L,2012,0.682,2012,1/1/12,Mali,MLI,Mali
+H,2012,0.263,2012,1/1/12,Malta,MLT,Malta
+LM,2012,0.647,2012,1/1/12,Mauritania,MRT,Mauritania
+UM,2012,0.369,2012,1/1/12,Mauritius,MUS,Mauritius
+UM,2012,0.369,2012,1/1/12,Mexico,MEX,Mexico
+LM,2012,0.255,2012,1/1/12,Moldova,MDA,Moldova
+LM,2012,0.3,2012,1/1/12,Mongolia,MNG,Mongolia
+UM,2012,0.175,2012,1/1/12,Montenegro,MNE,Montenegro
+LM,2012,0.527,2012,1/1/12,Morocco,MAR,Morocco
+L,2012,0.596,2012,1/1/12,Mozambique,MOZ,Mozambique
+L,2012,0.446,2012,1/1/12,Myanmar,MMR,Myanmar
+UM,2012,0.506,2012,1/1/12,Namibia,NAM,Namibia
+L,2012,0.518,2012,1/1/12,Nepal,NPL,Nepal
+H,2012,0.049,2012,1/1/12,Netherlands,NLD,Netherlands
+LM,2012,0.479,2012,1/1/12,Nicaragua,NIC,Nicaragua
+L,2012,0.707,2012,1/1/12,Niger,NER,Niger
+H,2012,0.067,2012,1/1/12,Norway,NOR,Norway
+H,2012,0.302,2012,1/1/12,Oman,OMN,Oman
+LM,2012,0.556,2012,1/1/12,Pakistan,PAK,Pakistan
+UM,2012,0.512,2012,1/1/12,Panama,PAN,Panama
+LM,2012,0.605,2012,1/1/12,Papua New Guinea,PNG,Papua New Guinea
+LM,2012,0.491,2012,1/1/12,Paraguay,PRY,Paraguay
+UM,2012,0.4,2012,1/1/12,Peru,PER,Peru
+LM,2012,null,2012,1/1/12,Philippines,PHL,Philippines
+H,2012,0.152,2012,1/1/12,Poland,POL,Poland
+H,2012,0.127,2012,1/1/12,Portugal,PRT,Portugal
+H,2012,0.556,2012,1/1/12,Qatar,QAT,Qatar
+UM,2012,0.343,2012,1/1/12,Romania,ROU,Romania
+H,2012,0.296,2012,1/1/12,Russian Federation,RUS,Russian Federation
+L,2012,0.422,2012,1/1/12,Rwanda,RWA,Rwanda
+LM,2012,0.485,2012,1/1/12,Samoa,WSM,Samoa
+H,2012,0.619,2012,1/1/12,Saudi Arabia,SAU,Saudi Arabia
+LM,2012,0.539,2012,1/1/12,Senegal,SEN,Senegal
+UM,2012,0.189,2012,1/1/12,Serbia,SRB,Serbia
+L,2012,0.66,2012,1/1/12,Sierra Leone,SLE,Sierra Leone
+H,2012,0.091,2012,1/1/12,Singapore,SGP,Singapore
+H,2012,0.067,2012,1/1/12,Slovenia,SVN,Slovenia
+UM,2012,0.415,2012,1/1/12,South Africa,ZAF,South Africa
+H,2012,0.1,2012,1/1/12,Spain,ESP,Spain
+LM,2012,0.609,2012,1/1/12,Sudan,SDN,Sudan
+UM,2012,0.495,2012,1/1/12,Suriname,SUR,Suriname
+LM,2012,0.559,2012,1/1/12,Swaziland,SWZ,Swaziland
+H,2012,0.049,2012,1/1/12,Sweden,SWE,Sweden
+H,2012,0.056,2012,1/1/12,Switzerland,CHE,Switzerland
+LM,2012,0.547,2012,1/1/12,Syrian Arab Republic,SYR,Syrian Arab Republic
+L,2012,0.323,2012,1/1/12,Tajikistan,TJK,Tajikistan
+L,2012,0.556,2012,1/1/12,Tanzania,TZA,Tanzania
+UM,2012,0.309,2012,1/1/12,Thailand,THA,Thailand
+L,2012,0.586,2012,1/1/12,Togo,TGO,Togo
+UM,2012,0.47,2012,1/1/12,Tonga,TON,Tonga
+H,2012,0.346,2012,1/1/12,Trinidad and Tobago,TTO,Trinidad and Tobago
+UM,2012,0.297,2012,1/1/12,Tunisia,TUN,Tunisia
+UM,2012,0.365,2012,1/1/12,Turkey,TUR,Turkey
+UM,2012,null,2012,1/1/12,Turkmenistan,TKM,Turkmenistan
+L,2012,0.545,2012,1/1/12,Uganda,UGA,Uganda
+LM,2012,0.316,2012,1/1/12,Ukraine,UKR,Ukraine
+H,2012,0.247,2012,1/1/12,United Arab Emirates,ARE,United Arab Emirates
+H,2012,0.168,2012,1/1/12,United Kingdom,GBR,United Kingdom
+H,2012,0.235,2012,1/1/12,United States,USA,United States
+H,2012,0.32,2012,1/1/12,Uruguay,URY,Uruguay
+LM,2012,null,2012,1/1/12,Uzbekistan,UZB,Uzbekistan
+LM,2012,0.331,2012,1/1/12,VietNam,VNM,Vietnam
+LM,2012,0.55,2012,1/1/12,Zambia,ZMB,Zambia
+L,2012,0.569,2012,1/1/12,Zimbabwe,ZWE,Zimbabwe
+L,2013,0.689,2013,1/1/13,Afghanistan,AFG,Afghanistan
+UM,2013,0.272,2013,1/1/13,Albania,ALB,Albania
+UM,2013,0.429,2013,1/1/13,Algeria,DZA,Algeria
+UM,2013,0.364,2013,1/1/13,Argentina,ARG,Argentina
+LM,2013,0.308,2013,1/1/13,Armenia,ARM,Armenia
+H,2013,0.124,2013,1/1/13,Australia,AUS,Australia
+H,2013,0.087,2013,1/1/13,Austria,AUT,Austria
+UM,2013,0.324,2013,1/1/13,Azerbaijan,AZE,Azerbaijan
+H,2013,0.372,2013,1/1/13,Bahamas,BHS,Bahamas
+H,2013,0.22,2013,1/1/13,Bahrain,BHR,Bahrain
+L,2013,0.535,2013,1/1/13,Bangladesh,BGD,Bangladesh
+H,2013,0.294,2013,1/1/13,Barbados,BRB,Barbados
+UM,2013,0.148,2013,1/1/13,Belarus,BLR,Belarus
+H,2013,0.084,2013,1/1/13,Belgium,BEL,Belgium
+UM,2013,0.384,2013,1/1/13,Belize,BLZ,Belize
+L,2013,0.615,2013,1/1/13,Benin,BEN,Benin
+LM,2013,0.524,2013,1/1/13,Bhutan,BTN,Bhutan
+LM,2013,0.486,2013,1/1/13,Bolivia,BOL,Bolivia
+UM,2013,0.186,2013,1/1/13,Bosnia and Herzegovina,BIH,Bosnia and Herzegovina
+UM,2013,0.465,2013,1/1/13,Botswana,BWA,Botswana
+UM,2013,0.431,2013,1/1/13,Brazil,BRA,Brazil
+UM,2013,0.215,2013,1/1/13,Bulgaria,BGR,Bulgaria
+L,2013,0.489,2013,1/1/13,Burundi,BDI,Burundi
+L,2013,0.485,2013,1/1/13,Cambodia,KHM,Cambodia
+LM,2013,0.577,2013,1/1/13,Cameroon,CMR,Cameroon
+H,2013,0.108,2013,1/1/13,Canada,CAN,Canada
+L,2013,null,2013,1/1/13,Central African Republic,CAF,Central African Republic
+L,2013,null,2013,1/1/13,Chad,TCD,Chad
+H,2013,0.329,2013,1/1/13,Chile,CHL,Chile
+UM,2013,0.172,2013,1/1/13,China,CHN,China
+UM,2013,0.423,2013,1/1/13,Colombia,COL,Colombia
+LM,2013,0.671,2013,1/1/13,Côte d'Ivoire,CIV,Côte d'Ivoire
+H,2013,0.128,2013,1/1/13,Croatia,HRV,Croatia
+UM,2013,0.311,2013,1/1/13,Cuba,CUB,Cuba
+H,2013,0.135,2013,1/1/13,Cyprus,CYP,Cyprus
+H,2013,0.135,2013,1/1/13,Czech Republic,CZE,Czech Republic
+H,2013,0.044,2013,1/1/13,Denmark,DNK,Denmark
+UM,2013,0.483,2013,1/1/13,Dominican Republic,DOM,Dominican Republic
+UM,2013,0.405,2013,1/1/13,Ecuador,ECU,Ecuador
+H,2013,0.155,2013,1/1/13,Estonia,EST,Estonia
+L,2013,0.546,2013,1/1/13,Ethiopia,ETH,Ethiopia
+UM,2013,null,2013,1/1/13,Fiji,FJI,Fiji
+H,2013,0.064,2013,1/1/13,Finland,FIN,Finland
+H,2013,0.107,2013,1/1/13,France,FRA,France
+UM,2013,0.549,2013,1/1/13,Gabon,GAB,Gabon
+LM,2013,0.369,2013,1/1/13,Georgia,GEO,Georgia
+H,2013,0.077,2013,1/1/13,Germany,DEU,Germany
+LM,2013,0.549,2013,1/1/13,Ghana,GHA,Ghana
+H,2013,0.128,2013,1/1/13,Greece,GRC,Greece
+LM,2013,0.522,2013,1/1/13,Guatemala,GTM,Guatemala
+LM,2013,0.512,2013,1/1/13,Guyana,GUY,Guyana
+L,2013,0.6,2013,1/1/13,Haiti,HTI,Haiti
+LM,2013,null,2013,1/1/13,Honduras,HND,Honduras
+UM,2013,0.259,2013,1/1/13,Hungary,HUN,Hungary
+H,2013,0.076,2013,1/1/13,Iceland,ISL,Iceland
+LM,2013,0.561,2013,1/1/13,India,IND,India
+LM,2013,0.472,2013,1/1/13,Indonesia,IDN,Indonesia
+UM,2013,0.529,2013,1/1/13,Iraq,IRQ,Iraq
+H,2013,0.14,2013,1/1/13,Ireland,IRL,Ireland
+H,2013,0.124,2013,1/1/13,Israel,ISR,Israel
+H,2013,0.09,2013,1/1/13,Italy,ITA,Italy
+UM,2013,0.435,2013,1/1/13,Jamaica,JAM,Jamaica
+H,2013,0.127,2013,1/1/13,Japan,JPN,Japan
+UM,2013,0.484,2013,1/1/13,Jordan,JOR,Jordan
+UM,2013,0.215,2013,1/1/13,Kazakhstan,KAZ,Kazakhstan
+L,2013,0.573,2013,1/1/13,Kenya,KEN,Kenya
+H,2013,0.243,2013,1/1/13,Kuwait,KWT,Kuwait
+H,2013,0.184,2013,1/1/13,Latvia,LVA,Latvia
+UM,2013,0.387,2013,1/1/13,Lebanon,LBN,Lebanon
+LM,2013,0.553,2013,1/1/13,Lesotho,LSO,Lesotho
+L,2013,0.654,2013,1/1/13,Liberia,LBR,Liberia
+UM,2013,0.166,2013,1/1/13,Libya,LBY,Libya
+H,2013,0.135,2013,1/1/13,Lithuania,LTU,Lithuania
+H,2013,0.088,2013,1/1/13,Luxembourg,LUX,Luxembourg
+L,2013,0.605,2013,1/1/13,Malawi,MWI,Malawi
+UM,2013,0.293,2013,1/1/13,Malaysia,MYS,Malaysia
+UM,2013,0.335,2013,1/1/13,Maldives,MDV,Maldives
+L,2013,null,2013,1/1/13,Mali,MLI,Mali
+H,2013,0.216,2013,1/1/13,Malta,MLT,Malta
+LM,2013,null,2013,1/1/13,Mauritania,MRT,Mauritania
+UM,2013,0.361,2013,1/1/13,Mauritius,MUS,Mauritius
+UM,2013,0.364,2013,1/1/13,Mexico,MEX,Mexico
+LM,2013,0.247,2013,1/1/13,Moldova,MDA,Moldova
+LM,2013,0.292,2013,1/1/13,Mongolia,MNG,Mongolia
+UM,2013,0.174,2013,1/1/13,Montenegro,MNE,Montenegro
+LM,2013,0.522,2013,1/1/13,Morocco,MAR,Morocco
+L,2013,0.587,2013,1/1/13,Mozambique,MOZ,Mozambique
+L,2013,0.443,2013,1/1/13,Myanmar,MMR,Myanmar
+UM,2013,0.501,2013,1/1/13,Namibia,NAM,Namibia
+L,2013,null,2013,1/1/13,Nepal,NPL,Nepal
+H,2013,0.047,2013,1/1/13,Netherlands,NLD,Netherlands
+LM,2013,0.474,2013,1/1/13,Nicaragua,NIC,Nicaragua
+L,2013,0.702,2013,1/1/13,Niger,NER,Niger
+H,2013,0.062,2013,1/1/13,Norway,NOR,Norway
+H,2013,0.294,2013,1/1/13,Oman,OMN,Oman
+LM,2013,0.555,2013,1/1/13,Pakistan,PAK,Pakistan
+UM,2013,0.507,2013,1/1/13,Panama,PAN,Panama
+LM,2013,0.602,2013,1/1/13,Papua New Guinea,PNG,Papua New Guinea
+LM,2013,0.469,2013,1/1/13,Paraguay,PRY,Paraguay
+UM,2013,0.394,2013,1/1/13,Peru,PER,Peru
+LM,2013,0.437,2013,1/1/13,Philippines,PHL,Philippines
+H,2013,0.15,2013,1/1/13,Poland,POL,Poland
+H,2013,0.11,2013,1/1/13,Portugal,PRT,Portugal
+H,2013,0.552,2013,1/1/13,Qatar,QAT,Qatar
+UM,2013,0.344,2013,1/1/13,Romania,ROU,Romania
+H,2013,0.29,2013,1/1/13,Russian Federation,RUS,Russian Federation
+L,2013,0.405,2013,1/1/13,Rwanda,RWA,Rwanda
+LM,2013,0.478,2013,1/1/13,Samoa,WSM,Samoa
+H,2013,0.267,2013,1/1/13,Saudi Arabia,SAU,Saudi Arabia
+LM,2013,0.532,2013,1/1/13,Senegal,SEN,Senegal
+UM,2013,0.19,2013,1/1/13,Serbia,SRB,Serbia
+L,2013,0.656,2013,1/1/13,Sierra Leone,SLE,Sierra Leone
+H,2013,0.082,2013,1/1/13,Singapore,SGP,Singapore
+H,2013,0.064,2013,1/1/13,Slovenia,SVN,Slovenia
+UM,2013,0.406,2013,1/1/13,South Africa,ZAF,South Africa
+H,2013,0.095,2013,1/1/13,Spain,ESP,Spain
+LM,2013,0.602,2013,1/1/13,Sudan,SDN,Sudan
+UM,2013,0.496,2013,1/1/13,Suriname,SUR,Suriname
+LM,2013,0.576,2013,1/1/13,Swaziland,SWZ,Swaziland
+H,2013,0.048,2013,1/1/13,Sweden,SWE,Sweden
+H,2013,0.049,2013,1/1/13,Switzerland,CHE,Switzerland
+LM,2013,0.551,2013,1/1/13,Syrian Arab Republic,SYR,Syrian Arab Republic
+L,2013,0.321,2013,1/1/13,Tajikistan,TJK,Tajikistan
+L,2013,0.553,2013,1/1/13,Tanzania,TZA,Tanzania
+UM,2013,0.307,2013,1/1/13,Thailand,THA,Thailand
+L,2013,0.567,2013,1/1/13,Togo,TGO,Togo
+UM,2013,0.465,2013,1/1/13,Tonga,TON,Tonga
+H,2013,0.343,2013,1/1/13,Trinidad and Tobago,TTO,Trinidad and Tobago
+UM,2013,0.299,2013,1/1/13,Tunisia,TUN,Tunisia
+UM,2013,0.351,2013,1/1/13,Turkey,TUR,Turkey
+UM,2013,null,2013,1/1/13,Turkmenistan,TKM,Turkmenistan
+L,2013,0.537,2013,1/1/13,Uganda,UGA,Uganda
+LM,2013,0.308,2013,1/1/13,Ukraine,UKR,Ukraine
+H,2013,0.247,2013,1/1/13,United Arab Emirates,ARE,United Arab Emirates
+H,2013,0.159,2013,1/1/13,United Kingdom,GBR,United Kingdom
+H,2013,0.227,2013,1/1/13,United States,USA,United States
+H,2013,0.32,2013,1/1/13,Uruguay,URY,Uruguay
+LM,2013,0.279,2013,1/1/13,Uzbekistan,UZB,Uzbekistan
+LM,2013,0.333,2013,1/1/13,VietNam,VNM,Vietnam
+LM,2013,0.544,2013,1/1/13,Zambia,ZMB,Zambia
+L,2013,0.532,2013,1/1/13,Zimbabwe,ZWE,Zimbabwe
+L,2014,0.676,2014,1/1/14,Afghanistan,AFG,Afghanistan
+UM,2014,0.267,2014,1/1/14,Albania,ALB,Albania
+UM,2014,0.429,2014,1/1/14,Algeria,DZA,Algeria
+H,2014,0.364,2014,1/1/14,Argentina,ARG,Argentina
+LM,2014,0.299,2014,1/1/14,Armenia,ARM,Armenia
+H,2014,0.123,2014,1/1/14,Australia,AUS,Australia
+H,2014,0.083,2014,1/1/14,Austria,AUT,Austria
+UM,2014,0.33,2014,1/1/14,Azerbaijan,AZE,Azerbaijan
+H,2014,0.37,2014,1/1/14,Bahamas,BHS,Bahamas
+H,2014,0.224,2014,1/1/14,Bahrain,BHR,Bahrain
+LM,2014,0.527,2014,1/1/14,Bangladesh,BGD,Bangladesh
+H,2014,0.291,2014,1/1/14,Barbados,BRB,Barbados
+UM,2014,0.146,2014,1/1/14,Belarus,BLR,Belarus
