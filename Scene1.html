@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/Scene1.css">
+
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://d3js.org/d3-collection.v1.min.js"></script>
+    <script src="https://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
+    <link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet"/>
+
+</head>
+<body>
+<!-- load the d3.js library -->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">DDV Final Project</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="./index.html">Home</a></li>
+            <li><a href="./Scene1.html">Page 1</a></li>
+            <li><a href="./Scene2.html">Page 2</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <h1>Gender Inequality Index (GII) </h1>
+    <h3>GII is aggregated(median) across different aggregation type:
+        <h4>
+            <ul>
+                <li>Income Bucket: Based on GDP per capita USD (PPP)</li>
+                <li>Regions of the world</li>
+                <li>Education index</li>
+            </ul>
+        </h4>
+    </h3>
+
+    <!--<form id="dimensions">-->
+        <!--<input  type='radio' id="income" name="mode" checked>Income</input>-->
+        <!--<input type='radio' id="population" name="mode">Population</input>-->
+        <!--<input type='radio' id="lifeExpectancy" name="mode">Life Expectancy</input>-->
+    <!--</form>-->
+    <div>
+        <table style="width:100%">
+            <tr>
+                <td>
+        <h3>Select Data Aggregation level:</h3>
+        <select id="aggType">
+            <option value="IncomeBucket" selected="selected">IncomeBucket</option>
+            <option value="Region">Region</option>
+            <option value="EducationIndexBucket">EducationIndexBucket</option>
+            <option value="Country">Country</option>
+        </select>
+                </td>
+                <td style="float:left">
+                    <div id="dropDown" style="display:none">
+                        <h3>Countries:</h3>
+                        <form id="dropDownList" method="post">
+                        <select id="countryDropDown" multiple="multiple" size="5">
+                        </select>
+                        <input type="button" value="GO" id="submitButton">
+                        </form>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    <!--<div id="legendContainer" class="legendContainer">-->
+        <!--<svg id="legend"></svg>-->
+    <!--</div>-->
+    <div id="graphArea" class="graph">
+    </div>
+    <div id="detailGraphIntro" style="display: none">
+        <table style="width:100%">
+            <tr>
+                <td>
+                    <span id="detailHeadingSpan">
+                        <h2 id="detailHeading"></h2>
+                    </span>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <h3>ColorCode:</h3>
+                    <select id="colorCode">
+                        <option value="IncomeBucket">IncomeBucket</option>
+                        <option value="Region">Region</option>
+                        <option value="EducationIndexBucket">EducationIndexBucket</option>
+                        <option value="Country" selected="selected">Country</option>
+                    </select>
+                </td>
+                <td style="float:left">
+                    <div id="dropDownDetail" style="display:none">
+                        <h3>Countries:</h3>
+                        <form id="dropDownListDetail" method="post">
+                            <select id="countryDropDownDetail" multiple="multiple" size="5">
+                            </select>
+                            <input type="button" value="GO" id="submitButtonDetail">
+                        </form>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    <div id = "detailedGraph" class="graph">
+    </div>
+    <script>
+
+        // Set the dimensions of the canvas / graph
+        var margin = {top: 20, right: 200, bottom: 100, left: 100},
+            width = 1080 - margin.left - margin.right,
+            height = 500 - margin.top - margin.bottom;
+
+        var legends = {L: "Low", H: "High", LM: "Lower-Middle", UM: "Upper-Middle"};
+
+        var detailColorCodes = ["IncomeBucket", "EducationIndexBucket", "Region", "Country"];
+        // Set the ranges
+        var x = d3.time.scale().range([0, width]);
+        var dx = d3.time.scale().range([0, width]);
+
+        var y = d3.scale.linear().range([height, 0]);
+        var dy = d3.scale.linear().range([height, 0]);
+
+        // Define the axes
+        var xAxis = d3.svg.axis().scale(x).orient("bottom");
+        var yAxis = d3.svg.axis().scale(y).orient("left");
+        var dXAxis = d3.svg.axis().scale(dx).orient("bottom");
+        var dYAxis = d3.svg.axis().scale(dy).orient("left");
+
+
+        var iColor = d3.scale.category10();
+        var rColor = d3.scale.category20();
+        var eIndexColor = d3.scale.category10();
+        var parseDate = d3.time.format("%Y").parse;
+
+        let countryColor = d3.scale.category20();
+        let detailColor = d3.scale.category20();
+
+        var div = d3.select("body").append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 0);
+
+
+        // Define the line
+        var line = d3.svg.line()
+            .x(function (d) {
+                return x(d.date);
+            })
+            .y(function (d) {
+                return y(d.GII);
+            })
+            .defined(function (d) {
+                return d.GII;
+            });
+
+        var detailLine = d3.svg.line()
+            .x(function (d) {
+                return dx(d.date);
+            })
+            .y(function (d) {
+                return dy(d.GII);
+            })
+            .defined(function (d) {
+                return d.GII;
+            });
+
+        // Adds the svg canvas
+        var svg = d3.select("#graphArea").append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom) //height + margin.top + margin.bottom
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        var detailSvg = d3.select("#detailedGraph").append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom) //height + margin.top + margin.bottom
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        // Create invisible rect for mouse tracking
+        svg.append("rect")
+            .attr("width", width)
+            .attr("height", height)
+            .attr("x", 0)
+            .attr("y", 0)
+            .attr("id", "mouse-tracker")
+            .style("fill", "white");
+
+        let rawData, countriesData, countries,countryToIncomeBucket, countryToRegionBucket,
+        countryToEducationIndexBucket;
+        let countriesSelected = ["Afghanistan", "India", "Brazil"];
+
+
+        d3.csv("https://raw.githubusercontent.com/pushpit/pushpit.github.io/master/data/All_data_for_Scene1.csv",
+        function (error, data) {
+            data.forEach(function (d) { // Make every date in the csv data a javascript date object format
+                d.date = parseDate(d["Year"]);
+                d.detailDate = new Date(d.date);
+                d.EducationIndexBucket = d.EducationIndexBucket.replace(/(\r\n|\n|\r)/gm," ");
+            });
+            iColor.domain(d3.set(data.filter(function (d) {return d.IncomeBucket !== ".."})
+                                    .map(d => d.IncomeBucket))
+                           .values());
+            rColor.domain(d3.set(data.map(d => d.Region)).values());
+            eIndexColor.domain(d3.set(data.filter(function (d) {
+                return d.EducationIndexBucket && d.EducationIndexBucket !== "..";})
+                .map(d => d.EducationIndexBucket))
+                .values());
+
+            countries = d3.set(data.map(d => d.Country)).values();
+            countryColor.domain(countries);
+            countryToIncomeBucket = getCountryToAggBucket(data, "IncomeBucket");
+            countryToRegionBucket = getCountryToAggBucket(data, "Region");
+            countryToEducationIndexBucket = getCountryToAggBucket(data, "EducationIndexBucket");
+            countriesData = countries.map(function (name) {
+                // Nest the data into an array of objects with new keys
+                console.log(name);
+                return {
+                    name: name, // "name": the csv headers except date
+                    displayName: name,
+                    values: data.filter(function(d) {return d.Country === name;}),
+                    visible: true,
+                };
+            });
+
+
+            let incomebucketData = iColor.domain().map(function (name) {
+                // Nest the data into an array of objects with new keys
+                console.log(name);
+                return {
+                    name: name, // "name": the csv headers except date
+                    displayName: legends[name],
+                    values: getMedianGII(data, name, "IncomeBucket"),
+                    visible: true,
+                };
+            });
+
+            let regionData = rColor.domain().map(function (name) {
+                // Nest the data into an array of objects with new keys
+                console.log(name);
+                return {
+                    name: name, // "name": the csv headers except date
+                    displayName: name,
+                    values: getMedianGII(data, name, "Region"),
+                    visible: true,
+                };
+            });
+
+            let educationIndexData = eIndexColor.domain().map(function (name) {
+                // Nest the data into an array of objects with new keys
+                console.log(name);
+                return {
+                    name: name, // "name": the csv headers except date
+                    displayName: name,
+                    values: getMedianGII(data, name, "EducationIndexBucket"),
+                    visible: true,
+                };
+            });
+            rawData = data;
+            updateGraph(data, incomebucketData, iColor, "IncomeBucket", countries, countriesSelected);
+            d3.select('#aggType')
+                .on("change", function () {
+                    var sect = document.getElementById("aggType");
+                    var section = sect.options[sect.selectedIndex].value;
+
+                    console.log(section);
+                    if(section === "IncomeBucket") {
+                        updateGraph(data, incomebucketData, iColor, section, countries, countriesSelected);
+                    } else if (section === "Region") {
+                        updateGraph(data, regionData, rColor, section, countries, countriesSelected);
+                    } else if (section === "EducationIndexBucket") {
+                        updateGraph(data, educationIndexData, eIndexColor, section, countries, countriesSelected);
+                    } else if (section === "Country") {
+                        updateGraph(data, countriesData, countryColor, section, countries, countriesSelected);
+                    }
+                });
+        });
+
+        function getYAxisLabel(aggType) {
+            if (aggType === "Country") {
+                return "GII";
+            } else {
+                return "Median GII";
+            }
+        }
+
+        function getLegendHeading(aggType) {
+            let legendHeading = "";
+            switch (aggType) {
+                case "IncomeBucket":
+                    legendHeading = "Income Level";
+                    break;
+                case "Region":
+                    legendHeading = "Regions of the world";
+                    break;
+                case "EducationIndexBucket":
+                    legendHeading = "Education Index";
+                    break;
+                case "Country":
+                    legendHeading = "Countries";
+                    break;
+                default: legendHeading = "";
+            }
+            return legendHeading;
+        }
+
+        function filteredDataForCountryView(data, countriesSelected) {
+            return data.filter(function(d) { return countriesSelected.includes(d.name);});
+        }
+
+        function filterDataForDetailView(countryData, aggType, nameSelected) {
+            return countryData.filter(function (d) {
+                if (aggType === "IncomeBucket") {
+                    return countryToIncomeBucket[d.name] === nameSelected;
+                } else if (aggType === "EducationIndexBucket"){
+                    return countryToEducationIndexBucket[d.name] === nameSelected;
+                } else if (aggType === "Region") {
+                    return countryToRegionBucket[d.name] === nameSelected;
+                }
+            })
+        }
+        function cleanupDetailedGraph() {
+            detailSvg.selectAll("*").remove();
+            d3.select("#detailedGraph").attr("style", "display:inline");
+            d3.select("#countryDropDownDetail").selectAll("*").remove();
+            d3.select("#detailGraphIntro").attr("style", "display:none");
+        }
+
+        function getLegendsColors(colorCode) {
+            if (colorCode === "IncomeBucket") {
+                return iColor;
+            } else if (colorCode === "EducationIndexBucket") {
+                return eIndexColor;
+            } else if (colorCode === "Region") {
+                return rColor;
+            }
+        }
+        function updateDetailedGraph(data, color, aggType, nameSelected, selectedCountriesDetail, colorCode,
+        fromGo, colorLegendFilter)
+        {
+            let filteredData = filterDataForDetailView(data, aggType, nameSelected);
+            let rawFilteredData = filteredData;
+            if (selectedCountriesDetail) {
+                filteredData = filteredData.filter(function (d) {
+                    return selectedCountriesDetail.includes(d.name);
+                })
+            } else {
+                selectedCountriesDetail = filteredData.map(function (d) {
+                    return d.name;
+                });
+            }
+            if (colorLegendFilter) {
+                filteredData = filteredData.filter(function (d) {
+                    if (colorCode === "EducationIndexBucket") {
+                        return countryToEducationIndexBucket[d.name] === colorLegendFilter;
+                    } else if (colorCode === "IncomeBucket") {
+                        return countryToIncomeBucket[d.name] === colorLegendFilter;
+                    } else if (colorCode === "Region") {
+                        return countryToRegionBucket[d.name] === colorLegendFilter;
+                    } else {
+                        return true;
+                    }
+                })
+            }
+            cleanupDetailedGraph();
+            let bucketSelected = nameSelected;
+            if (aggType === "IncomeBucket") {
+                bucketSelected = legends[nameSelected];
+            }
+            d3.select("#detailHeading").text("Country Level details for [" + bucketSelected + "] " + aggType);
+            dx.domain(d3.extent(rawData, function (d) {
+                return d.detailDate;
+            }));
+            dy.domain([0,//d3.min(categories, function(c) { return d3.min(c.values, function(d) { return d.GII; }); }),
+                d3.max(data, function (c) {
+                    return d3.max(c.values, function (d) {
+                        return d.GII;
+                    });
+                })]);
+            detailSvg.append("g")
+                .attr("class", "x axis")
+                .attr("transform", "translate(0," + height + ")")
+                .call(dXAxis)
+                .append("text")
+                .attr("y", 30)
+                .attr("x", 350)
+                .attr("dy", ".71em")
+                .style("text-anchor", "end")
+                .text("Year");
+            detailSvg.append("g")
+                .attr("class", "y axis")
+                .call(dYAxis)
+                .append("text")
+                .attr("transform", "rotate(-90)")
+                .attr("y", -60)
+                .attr("x", -100)
+                .attr("dy", ".71em")
+                .style("text-anchor", "end")
+                .text("GII");
+
+            var state = detailSvg.selectAll(".line").data(filteredData);
+            // Select nested data and append to new svg group elements
+            var incomeBucket  = state.enter().append("g").attr("class", "line");
+
+
+            incomeBucket.append("path")
+                .attr("class", "line")
+                .style("stroke-width",2.5)
+                // .style("pointer-events", "none") // Stop line interferring with cursor
+                .attr("id", function (d) {
+                    return "line-" + d.name.replace(" ", "").replace("/", ""); // Give line id of line-(insert issue name, with any spaces replaced with no spaces)
+                })
+                .attr("d", function (d) {
+                    return detailLine(d.values); // If array key "visible" = true then draw line, if not then don't
+                })
+                .attr("clip-path", "url(#clip)")//use clip path to make irrelevant part invisible
+                .style("stroke", function (d) {
+                    if (colorCode === "IncomeBucket") {
+                        return iColor(countryToIncomeBucket[d.name]);
+                    } else if (colorCode === "EducationIndexBucket") {
+                        return eIndexColor(countryToEducationIndexBucket[d.name]);
+                    } else if (colorCode === "Region") {
+                        return rColor(countryToRegionBucket[d.name]);
+                    } else {
+                        return color(d.name);
+                    }
+                }).on("mouseover", function (d) {
+                d3.select(this).style("stroke-width", '6px');
+                div.transition()
+                    .duration(200)
+                    .style("opacity", 1);
+                div	.html( d.displayName + "<br/>")
+                    .style("left", (d3.event.pageX) + "px")
+                    .style("top", (d3.event.pageY)-20 + "px");
+            })
+                .on("mouseout",	function(d) {        //undo everything on the mouseout
+                    d3.select(this)
+                        .style("stroke-width", '2.5px');
+                    div.transition().duration(200).style("opacity", 0);
+                });
+
+            if (colorCode && colorCode !== "Country") {
+                var legendColors = getLegendsColors(colorCode, filteredData);
+                var legendSpace = 100 / legendColors.domain().length;
+                incomeBucket.append("text")
+                    .attr("x", width + ((margin.right/3) + 120))
+                    .attr("y", legendSpace + 160)
+                    .attr("dy", ".71em")
+                    .style("text-anchor", "end")
+                    .attr("class", "legend-heading")
+                    .text(getLegendHeading(colorCode));
+                let tx = width + ((margin.right/3) -15),
+                    ty = legendSpace - 8;
+                let detailLegend = detailSvg.selectAll(".legend").data(legendColors.domain());
+                let detailLegendRects = detailLegend.enter().append("g").attr("class", "legend")
+                    .attr("transform", function(d, i) { return "translate(" + tx + ","  +
+                        (legendSpace + i * legendSpace + 180) + ")"; });
+                detailLegendRects.append("rect")
+                    .attr("width", function (d) {
+                        if (d === colorLegendFilter) {
+                            return 15;
+                        }
+                        return 10;
+                    })
+                    .attr("height", function (d) {
+                        if (d === colorLegendFilter) {
+                            return 15;
+                        }
+                        return 10;
+                    })
+                    .attr("x", 10)
+                    .attr("y", function (d, i) {
+                        return (legendSpace) + i * (legendSpace) - 8;
+                    })
+                    // .attr("x", width + (margin.right / 3) - 15)
+                    // .attr("y", function (d, i) {
+                    //     return (legendSpace) + i * (legendSpace) - 8;
+                    // })  // spacing
+                    .attr("fill", function (d) {
+                        return legendColors(d); // If array key "visible" = true then color rect, if not then make it grey
+                    })
+                    .attr("class", "legend-box")
+                    .attr("stroke", "#000000")
+                    .on("mouseover", function (d) {
+                        div.transition()
+                            .duration(200)
+                            .style("opacity", 1);
+                        div.html(d + "<br/>")
+                            .style("left", (d3.event.pageX) + "px")
+                            .style("top", (d3.event.pageY) - 20 + "px");
+                        d3.select(this).style("cursor", "pointer");
+                    })
+                    .on("mouseout", function (d) {
+                        div.transition()
+                            .duration(500)
+                            .style("opacity", 0);
+                        d3.select(this).style("cursor", "default");
+                    })
+                    .on("click", function (d) {
+                        console.log(d);
+                        if (colorLegendFilter !== d) {
+                            updateDetailedGraph(data, color, aggType, nameSelected, selectedCountriesDetail,
+                                colorCode, true, d);
+                        } else {
+                            updateDetailedGraph(data, color, aggType, nameSelected, selectedCountriesDetail,
+                                colorCode, true, null);
+                        }
+                    });
+
+                detailLegendRects.append("text")
+                    .attr("x", 30)
+                    .attr("y", function (d, i) {
+                        return (legendSpace) + i * (legendSpace);
+                    })// (return (11.25/2 =) 5.625) + i * (5.625)
+                    .text(function (d) {
+                        if (colorCode === "IncomeBucket") {
+                            return legends[d];
+                        }
+                        return d;
+                    });
+
+                // //these are the same as your column names
+                //    // .slice(1); //remove the first column name (`date`);
+
+                var focus = detailLegendRects.select("text") // create group elements to house tooltip text
+                    .data(legendColors.domain()) // bind each column name date to each g element
+                    .enter();
+                // .append("text") //create one <g> for each columnName
+                //     .attr("class", "focus");
+
+
+                focus.append("text") // http://stackoverflow.com/questions/22064083/d3-js-multi-series-chart-with-y-value-tracking
+                    .attr("class", "tooltip")
+                    .attr("x", width + 20) // position tooltips
+                    .attr("y", function (d, i) {
+                        return (legendSpace) + i * (legendSpace);
+                    });
+            }
+            d3.select("#detailGraphIntro").attr("style", "display:inline");
+            d3.select("#dropDownDetail").attr("style", "display:inline");
+            let dropdown = d3.select("#countryDropDownDetail");
+            let options = dropdown.selectAll("option").data(
+                fromGo ? rawFilteredData.map(function (d) {
+                    return d.name;
+                }) : selectedCountriesDetail);
+            options.enter().append("option")
+                .property("selected", function (d) {
+                    return selectedCountriesDetail.includes(d);
+                })
+                .text(function(d){return d});
+            d3.select("#submitButtonDetail").on("click",
+                function()
+                {
+                    console.log("Test works");
+                    let countriesSelectedDetail = $('select#countryDropDownDetail').val();
+                    console.log(countriesSelectedDetail);
+
+                    document.getElementById('colorCode').getElementsByTagName('option')[3].selected = 'selected'
+
+                    return updateDetailedGraph(data,countryColor,
+                        aggType, nameSelected, countriesSelectedDetail, null, true);
+                });
+
+            d3.select('#colorCode')
+                .on("change", function () {
+                    var sect = document.getElementById("colorCode");
+                    var section = sect.options[sect.selectedIndex].value;
+                    let countriesSelectedDetail = $('select#countryDropDownDetail').val();
+                    console.log(countriesSelectedDetail);
+                    console.log(section);
+                    updateDetailedGraph(data,countryColor,
+                        aggType, nameSelected, countriesSelectedDetail, section, true);
+
+                });
+        }
+
+        function cleanup() {
+            svg.selectAll("*").remove();
+            detailSvg.selectAll("*").remove();
+            d3.select("#dropDown").attr("style", "display:none");
+            d3.select("#countryDropDown").selectAll("*").remove();
+            d3.select("#detailedGraph").attr("style", "display:none");
+            d3.select("#countryDropDownDetail").selectAll("*").remove();
+            d3.select("#detailGraphIntro").attr("style", "display:none");
+
+        }
+        function updateGraph(rawData, data, color, aggType, countries, countriesSelected) {
+
+            cleanup();
+
+            x.domain(d3.extent(rawData, function (d) {
+                return d.detailDate;
+            }));
+            y.domain([0,//d3.min(categories, function(c) { return d3.min(c.values, function(d) { return d.GII; }); }),
+                d3.max(data, function (c) {
+                    return d3.max(c.values, function (d) {
+                        return d.GII;
+                    });
+                })]);
+            svg.append("g")
+                .attr("class", "x axis")
+                .attr("transform", "translate(0," + height + ")")
+                .call(xAxis)
+                .append("text")
+                .attr("y", 30)
+                .attr("x", 350)
+                .attr("dy", ".71em")
+                .style("text-anchor", "end")
+                .text("Year");
+            svg.append("g")
+                .attr("class", "y axis")
+                .call(yAxis)
+                .append("text")
+                .attr("transform", "rotate(-90)")
+                .attr("y", -60)
+                .attr("x", -100)
+                .attr("dy", ".71em")
+                .style("text-anchor", "end")
+                .text(getYAxisLabel(aggType));
+
+            // Scale the range of the data
+
+            let filteredData = data;
+            if (aggType === "Country") {
+                filteredData = filteredDataForCountryView(data, countriesSelected);
+            }
+
+            var state = svg.selectAll(".line").data(filteredData);
+            // Select nested data and append to new svg group elements
+            var incomeBucket  = state.enter().append("g").attr("class", "line");
+
+
+            let flatMapData=[];
+            filteredData.forEach(function (d) {
+                d.values.forEach(function(c) {flatMapData.push(c);})
+            })
+            var points = svg.selectAll(".circle").data(flatMapData);
+
+            let scatterPoints = points.enter().append("g").attr("class", "point");
+            scatterPoints.append("circle")
+                .attr("class", "dot")
+                .attr("r", 4)
+                .attr("cx", function (d) {
+                    return x(d.date);
+                })
+                .attr("cy", function (d) {
+                    return y(d.GII);
+                })
+                .style("fill", "#000000")
+                .style("fill-opacity", 0.3)
+                .on("mouseover", function (d) {
+                    console.log(d);
+                    d3.select(this).style("stroke-width", '6px');
+                    div.transition()
+                        .duration(200)
+                        .style("opacity", 1);
+                    div	.html( "Year: " + d.date.getFullYear() + "<br/>" + "GII: " + d.GII)
+                        .style("left", (d3.event.pageX) + "px")
+                        .style("top", (d3.event.pageY)-20 + "px");
+                    if (aggType === "EducationIndexBucket") {
+                        d3.select(this).style("cursor", "pointer");
+                    }
+            }).on("mouseout", function () {
+                div.transition().duration(200).style("opacity", 0);
+                d3.select(this).style("cursor", "default");
+            });
+
+
+            incomeBucket.append("path")
+                .attr("class", "line")
+                .style("stroke-width",2.5)
+                // .style("pointer-events", "none") // Stop line interferring with cursor
+                .attr("id", function (d) {
+                    return "line-" + d.name.replace(" ", "").replace("/", ""); // Give line id of line-(insert issue name, with any spaces replaced with no spaces)
+                })
+                .attr("d", function (d) {
+                    return line(d.values); // If array key "visible" = true then draw line, if not then don't
+                })
+                .attr("clip-path", "url(#clip)")//use clip path to make irrelevant part invisible
+                .style("stroke", function (d) {
+                    return color(d.name);
+                })
+                .on("mouseover", function (d) {
+                    d3.select(this).style("stroke-width", '6px');
+                    div.transition()
+                        .duration(200)
+                        .style("opacity", 1);
+                    div	.html( d.displayName + "<br/>")
+                        .style("left", (d3.event.pageX) + "px")
+                        .style("top", (d3.event.pageY)-20 + "px");
+
+                    d3.select(this).style("cursor", "pointer");
+
+                })
+                .on("mouseout",	function(d) {        //undo everything on the mouseout
+                    d3.select(this)
+                        .style("stroke-width", '2.5px');
+                    div.transition().duration(200).style("opacity", 0);
+                    d3.select(this).style("cursor", "default");
+                })
+                .on("click",	function(d) {
+                    //undo everything on the mouseout
+                    let xPos= x.invert(d3.mouse(this)[0]);
+                    console.log(xPos);
+                    console.log(aggType);
+                    document.getElementById('colorCode').getElementsByTagName('option')[3].selected = 'selected'
+
+                    if (aggType !== "Country") {
+                        updateDetailedGraph(countriesData, countryColor, aggType, d.name);
+                    }
+                });
+
+                // draw legend
+            if (aggType !== "Country") {
+                var legendSpace = 300 / data.length;
+                incomeBucket.append("text")
+                    .attr("x", width + (margin.right) - 10)
+                    .attr("y", 10 - data.length)
+                    .attr("dy", ".71em")
+                    .style("text-anchor", "end")
+                    .attr("class", "legend-heading")
+                    .text(getLegendHeading(aggType));
+                incomeBucket.append("rect")
+                    .attr("width", 10)
+                    .attr("height", 10)
+                    .attr("x", width + (margin.right / 3) - 15)
+                    .attr("y", function (d, i) {
+                        return (legendSpace) + i * (legendSpace) - 8;
+                    })  // spacing
+                    .attr("fill", function (d) {
+                        return color(d.name); // If array key "visible" = true then color rect, if not then make it grey
+                    })
+                    .attr("class", "legend-box")
+                    .attr("stroke", "#000000")
+
+                    .on("click", function (d) { // On click make d.visible
+                        d.visible = !d.visible; // If array key for this data selection is "visible" = true then make it false, if false then make it true
+
+                        maxY = findMaxY(data); // Find max Y rating value categories data with "visible"; true
+                        yScale.domain([0, maxY]); // Redefine yAxis domain based on highest y value of categories data with "visible"; true
+                        svg.select(".y.axis")
+                            .transition()
+                            .call(yAxis);
+
+                        incomeBucket.select("path")
+                            .transition()
+                            .attr("d", function (d) {
+                                return d.visible ? line(d.values) : null; // If d.visible is true then draw line for this d selection
+                            });
+
+                        incomeBucket.select("rect")
+                            .transition()
+                            .attr("fill", function (d) {
+                                return d.visible ? color(d.name) : "#F1F1F2";
+                            });
+                    })
+                    .on("mouseover", function (d) {
+                        div.transition()
+                            .duration(200)
+                            .style("opacity", 1);
+                        div.html(d.displayName + "<br/>")
+                            .style("left", (d3.event.pageX) + "px")
+                            .style("top", (d3.event.pageY) - 20 + "px");
+                    })
+                    .on("mouseout", function (d) {
+                        div.transition()
+                            .duration(500)
+                            .style("opacity", 0);
+                    });
+
+                incomeBucket.append("text")
+                    .attr("x", width + (margin.right / 3))
+                    .attr("y", function (d, i) {
+                        return (legendSpace) + i * (legendSpace);
+                    })  // (return (11.25/2 =) 5.625) + i * (5.625)
+                    .text(function (d) {
+                        return d.displayName;
+                    });
+
+                // //these are the same as your column names
+                //    // .slice(1); //remove the first column name (`date`);
+
+                var focus = incomeBucket.select("g") // create group elements to house tooltip text
+                    .data(color.domain()) // bind each column name date to each g element
+                    .enter().append("g") //create one <g> for each columnName
+                    .attr("class", "focus");
+
+
+                focus.append("text") // http://stackoverflow.com/questions/22064083/d3-js-multi-series-chart-with-y-value-tracking
+                    .attr("class", "tooltip")
+                    .attr("x", width + 20) // position tooltips
+                    .attr("y", function (d, i) {
+                        return (legendSpace) + i * (legendSpace);
+                    });
+            } else  {
+                d3.selectAll(".line").append("text")
+                    .attr("transform", function (d) {
+                        return "translate(" + x(d.values[d.values.length - 1].date) + ", " +
+                         y(d.values[d.values.length - 1].GII) + ")";
+                    }).text(function (d) {return d.name;});
+                d3.select("#dropDown").attr("style", "display:inline");
+                let dropdown = d3.select("#countryDropDown");
+                let options = dropdown.selectAll("option").data(countries);
+                options.enter().append("option")
+                    .property("selected", function (d) {
+                      return countriesSelected.includes(d);
+                    })
+                    .text(function(d){return d});
+                d3.select("#submitButton").on("click",
+                    function()
+                    {
+                        console.log("Test works");
+                        countriesSelected = $('select#countryDropDown').val();
+                        console.log(countriesSelected);
+
+                    return updateGraph(rawData, filteredDataForCountryView(countriesData, countriesSelected),
+                        countryColor,
+                    "Country", countries, countriesSelected);
+                });
+
+                // var options = incomeBucket.select("#countryDropDown").data(countries);
+                //
+                // options.enter()
+                //     .append("option")
+                //     .text(function(d){return d});
+                // dropdown.on("change",changeIt)
+                //
+                // var dataDim = d3.select("#dimensions")
+                // dataDim.on("change", changeIt)
+
+
+            }
+        }
+
+        function clearAll() {
+            d3.selectAll(".line")
+                .transition().duration(100)
+                .attr("d", function (d) {
+                    return null;
+                });
+            d3.select("#legend").selectAll("rect")
+                .transition().duration(100)
+                .attr("fill", "#ccc");
+        }
+
+        function showAll() {
+            d3.selectAll(".line")
+                .transition().duration(100)
+                .attr("d", function (d) {
+                    return stateline(d.values);
+                });
+            d3.select("#legend").selectAll("rect")
+                .attr("fill", function (d) {
+                    if (d.active == true) {
+                        return iColor(d.key);
+                    }
+                })
+        }
+
+
+        function getCountryToAggBucket(data, fieldName) {
+            var map = {};
+            data.forEach(function (d) {
+                map[d.Country] = d[fieldName];
+            });
+            return map;
+        }
+        function getMedianGII(data, name, fieldName) {
+            let dataForIB = data.filter(d => {
+                return d[fieldName] === name
+            }).map(function (d) { // "values": which has an array of the dates and ratings
+                console.log(d.GII);
+                return {
+                    date: d.date,
+                    GII: parseFloat(d.GII),
+                };
+            });
+            let result = d3.nest().key(function (d) {
+                return d.date;
+            }).rollup(function (v) {
+                return d3.median(v, function (d) {
+                    return d.GII ? d.GII : 0;
+
+                })
+            }).entries(dataForIB).map(function (group) {
+                return {
+                    date: new Date(group.key), GII: group.value, visible: true
+                }
+            });
+            console.log(result);
+            return result;
+        }
+    </script>
+</div>
+</body>
