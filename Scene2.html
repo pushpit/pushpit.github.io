@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title> GII vs EI </title>
+    <link rel="stylesheet" type="text/css" href="./css/Scene2.css">
+
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://cdn.rawgit.com/fryn/html5slider/gh-pages/html5slider.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://d3js.org/d3-collection.v1.min.js"></script>
+    <script src="https://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+    <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
+    <link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet"/>
+
+</head>
+
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">DDV Final Project</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="./index.html">Home</a></li>
+            <li><a href="./Scene1.html">Page 1</a></li>
+            <li><a href="./Scene2.html">Page 2</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <span id="range"><h3>Year: 1995</h3></span>
+    <input id="slider" type="range" min="1995" max="2014" value="1995" step="1"/>
+    <div>
+        <table style="width:100%">
+            <tr>
+                <td style="float: left">
+                    <h3>ColorCode:</h3>
+                    <select id="colorCode">
+                        <option value="IncomeBucket" >IncomeBucket</option>
+                        <option value="Region">Region</option>
+                        <option value="EducationIndexBucket" selected="selected">EducationIndexBucket</option>
+                    </select>
+                </td>
+                <td style="float:left">
+                    <div id="dropDown" style="display:none">
+                        <h3>Countries:</h3>
+                        <form id="dropDownList" method="post">
+                            <select id="countryDropDown" multiple="multiple" size="5">
+                            </select>
+                            <input type="button" value="GO" id="submitButton">
+                        </form>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    <!--<button name="play" id="play">Play</button>-->
+
+    <div id="chart"></div>
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        var margin = {
+            top: 20,
+            right: 20,
+            bottom: 30,
+            left: 60
+        }, width = 725 - margin.left - margin.right, height = 600 - margin.top - margin.bottom;
+
+        var x = d3.scale.linear().range([0, width]);
+
+        var div = d3.select("body").append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 0);
+
+
+        var parseDate = d3.time.format("%Y").parse;
+        var y = d3.scale.linear().range([height, 0]);
+
+        var formatCurrency = d3.format(",");
+
+        var legends = {L: "Low", H: "High", LM: "Lower-Middle", UM: "Upper-Middle"};
+
+        //var color = d3.scale.category10();
+        var color = d3.scale.ordinal()
+            .domain([1, 2, 3])
+            .range(["rgb(53,135,212)", "rgb(77, 175, 74)", "rgb(228, 26, 28)"]);
+
+        var xAxis = d3.svg.axis()
+            .scale(x)
+            .orient("bottom");
+
+        var yAxis = d3.svg.axis()
+            .scale(y)
+            .orient("left");
+
+        var iColor = d3.scale.category10();
+        var rColor = d3.scale.category20();
+        var eIndexColor = d3.scale.category10();
+
+        var svg = d3.select("#chart")
+            .append("svg")
+            .attr("class", "chart")
+            .attr("viewBox", "0 0 725 600")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        d3.csv("https://raw.githubusercontent.com/pushpit/pushpit.github.io/master/data/All_data_for_Scene1.csv",
+            function (error, data) {
+
+                let allYears = [];
+                data.forEach(function (d) { // Make every date in the csv data a javascript date object format
+                    d.date = parseDate(d["Year"]);
+                    d.detailDate = new Date(d.date);
+                    d.EducationIndexBucket = d.EducationIndexBucket.replace(/(\r\n|\n|\r)/gm, " ");
+                    allYears.push(parseInt(d.Year));
+                });
+                data = data.filter(function (d) {
+                    return d.GII && d.EI;
+                });
+                x.domain(d3.extent(data, function (d) {
+                    return d.EI;
+                }));
+                y.domain(d3.extent(data, function(d) {
+                    return d.GII;
+                }));
+
+                iColor.domain(d3.set(data.filter(function (d) {return d.IncomeBucket !== ".."})
+                    .map(d => d.IncomeBucket))
+                    .values());
+                rColor.domain(d3.set(data.map(d => d.Region)).values());
+                eIndexColor.domain(d3.set(data.filter(function (d) {
+                    return d.EducationIndexBucket && d.EducationIndexBucket !== "..";})
+                    .map(d => d.EducationIndexBucket))
+                    .values());
+
+
+                // //legend y position
+                // var LYP = 300,
+                //     LXP = 570;
+                //
+                // svg.append("text").attr("class", "label").attr("x", LXP - 5).attr("y", LYP).text("Institution Type").style("font-weight", "bold");
+                //
+                // //color legend
+                // svg.append("circle").attr("cx", LXP).attr("cy", LYP + 20).attr("r", 12).style("fill", "rgb(53, 135, 212)").attr("stroke", "#000");
+                // svg.append("text").attr("class", "label").attr("x", LXP + 15).attr("y", LYP + 25).style("text-anchor", "start").text(function (d) {
+                //     return "Public";
+                // });
+                // svg.append("circle").attr("cx", LXP).attr("cy", LYP + 50).attr("r", 12).style("fill", "rgb(77, 175, 74)").attr("stroke", "#000");
+                // svg.append("text").attr("class", "label").attr("x", LXP + 15).attr("y", LYP + 55).style("text-anchor", "start").text(function (d) {
+                //     return "Nonprofit";
+                // });
+                // svg.append("circle").attr("cx", LXP).attr("cy", LYP + 80).attr("r", 12).style("fill", "rgb(228, 26, 28)").attr("stroke", "#000");
+                // svg.append("text").attr("class", "label").attr("x", LXP + 15).attr("y", LYP + 85).style("text-anchor", "start").text(function (d) {
+                //     return "For-profit";
+                // });
+                // svg.append("text").attr("class", "label").attr("x", LXP - 5).attr("y", LYP + 110).text("Enrollment").style("font-weight", "bold");
+                //
+                // //size legend
+                // svg.append("circle").attr("cx", LXP).attr("cy", LYP + 30 + 110).attr("r", 20).style("fill", "#bbb").attr("stroke", "#000");
+                // svg.append("text").attr("class", "label").attr("x", LXP + 25).attr("y", LYP + 140).style("text-anchor", "start").text("27,000");
+                // svg.append("circle").attr("cx", LXP).attr("cy", LYP + 60 + 110).attr("r", 15).style("fill", "#bbb").attr("stroke", "#000");
+                // svg.append("text").attr("class", "label").attr("x", LXP + 25).attr("y", LYP + 170).style("text-anchor", "start").text("18,000+");
+                // svg.append("circle").attr("cx", LXP).attr("cy", LYP + 80 + 110).attr("r", 9).style("fill", "#bbb").attr("stroke", "#000");
+                // svg.append("text").attr("class", "label").attr("x", LXP + 25).attr("y", LYP + 190).style("text-anchor", "start").text("9,000+");
+                // svg.append("circle").attr("cx", LXP).attr("cy", LYP + 93 + 110).attr("r", 4).style("fill", "#bbb").attr("stroke", "#000");
+                // svg.append("text").attr("class", "label").attr("x", LXP + 25).attr("y", LYP + 210).style("text-anchor", "start").text("100+");
+
+
+                function findClosestYear(year) {
+                    let nYear = parseInt(year);
+                    let closestYear = Math.max.apply(null, allYears.filter(function(v){return v <= nYear})) + "";
+                    console.log("Year: " + year + ", ClosestYear: " + year);
+                    return closestYear;
+                }
+                createScatterPlot("1995");
+                function clear() {
+                    svg.selectAll("*").remove();
+                }
+                //circles
+                function createScatterPlot(year) {
+                    clear();
+                    data = data.filter(function (d) {
+                        return d.GII && d.EI;
+                    });
+                    x.domain(d3.extent(data, function (d) {
+                        return d.EI;
+                    }));
+                    y.domain(d3.extent(data, function(d) {
+                        return d.GII;
+                    }));
+
+                    //x axis
+                    svg.append("g")
+                        .attr("class", "x axis")
+                        .attr("transform", "translate(0," + height + ")")
+                        .call(xAxis)
+                        .append("text")
+                        .attr("class", "label")
+                        .attr("x", width)
+                        .attr("y", -6)
+                        .style("text-anchor", "end")
+                        .text("Education Index");
+
+                    //y axis
+                    svg.append("g")
+                        .attr("class", "y axis")
+                        .call(yAxis)
+                        .append("text")
+                        .attr("class", "label")
+                        .attr("transform", "rotate(-90)")
+                        .attr("x", -200)
+                        .attr("y", -40)
+                        .attr("dy", ".71em")
+                        .style("text-anchor", "end")
+                        .text("Gender Inequality Index(GII)");
+                    svg.selectAll(".dot")
+                        .data(data.filter(function (d) {
+                            return d.Year === year;
+                        }).sort(function (a, b) {
+                            return b.EI - a.EI;
+                        }))
+                        .enter()
+                        .append("circle")
+                        .attr("class", "dot")
+                        .attr("r",
+                            function (d) {
+                                return (4 + (parseFloat(d.GII) * 4 + parseFloat(d.EI) * 2));
+                            })//gave it a base 3.4 plus a proportional amount to the enrollment
+                        .attr("cx",
+                            function (d) {
+                                return x(d.EI);
+                            })
+                        .attr("cy",
+                            function (d) {
+                                return y(d.GII);
+                            })
+                        .style("fill",
+                            function (d) {
+                                var sect = document.getElementById("colorCode");
+                                var section = sect.options[sect.selectedIndex].value;
+                                if (section === "EducationIndexBucket") {
+                                    return eIndexColor(d.EducationIndexBucket);
+                                } else if (section === "IncomeBucket") {
+                                    return iColor(d.IncomeBucket);
+                                } else if (section === "Region") {
+                                    return rColor(d.Region);
+                                }
+                                return "rgb(228, 26, 28)";
+                            })
+                        .on("mouseover", function (d) {
+                            div.transition()
+                                .duration(200)
+                                .style("opacity", 1);
+                            div.html("Country: " + d.Country + "<br/>" + "EI: " + d.EI + "<br/>" + "GII: " + d.GII)
+                                .style("left", (d3.event.pageX) + "px")
+                                .style("top", (d3.event.pageY) - 20 + "px");
+                            // d3.select(this).style("cursor", "pointer");
+
+                        })
+                        .on("mouseout", function () {
+                            div.transition()
+                                .duration(500)
+                                .style("opacity", 0);
+                            // d3.select(this).style("cursor", "default");
+                        })
+                    var colorCode = document.getElementById("colorCode");
+                    var colorCodeSelected = colorCode.options[colorCode.selectedIndex].value;
+
+                    var legendColors = getLegendsColors(colorCodeSelected);
+                    var legendSpace = 100 / legendColors.domain().length;
+                    // incomeBucket.append("text")
+                    //     .attr("x", width + ((margin.right/3) + 120))
+                    //     .attr("y", legendSpace + 160)
+                    //     .attr("dy", ".71em")
+                    //     .style("text-anchor", "end")
+                    //     .attr("class", "legend-heading")
+                    //     .text(getLegendHeading(colorCode));
+                    let tx = width + ((margin.right/3) -15),
+                        ty = legendSpace - 8;
+                    let detailLegend = svg.selectAll(".legend").data(legendColors.domain());
+                    let colorLegendFIlter = "";
+                    let detailLegendRects = detailLegend.enter().append("g").attr("class", "legend")
+                        .attr("transform", function(d, i) { return "translate(" + tx + ","  +
+                            (legendSpace + i * legendSpace + 180) + ")"; });
+                    detailLegendRects.append("rect")
+                        .attr("width", function (d) {
+                            // if (d === colorLegendFilter) {
+                            //     return 15;
+                            // }
+                            return 10;
+                        })
+                        .attr("height", function (d) {
+                            // if (d === colorLegendFilter) {
+                            //     return 15;
+                            // }
+                            return 10;
+                        })
+                        .attr("x", 10)
+                        .attr("y", function (d, i) {
+                            return (legendSpace) + i * (legendSpace) - 8;
+                        })
+                        // .attr("x", width + (margin.right / 3) - 15)
+                        // .attr("y", function (d, i) {
+                        //     return (legendSpace) + i * (legendSpace) - 8;
+                        // })  // spacing
+                        .attr("fill", function (d) {
+                            return legendColors(d); // If array key "visible" = true then color rect, if not then make it grey
+                        })
+                        .attr("class", "legend-box")
+                        .attr("stroke", "#000000")
+                    .on("mouseover", function (d) {
+                        div.transition()
+                            .duration(200)
+                            .style("opacity", 1);
+                        let val = d;
+                        if ($("#colorCode").val()  === "IncomeBucket") {
+                            val = legends[d];
+                        }
+                        div.html(val + "<br/>")
+                            .style("left", (d3.event.pageX) + "px")
+                            .style("top", (d3.event.pageY) - 20 + "px");
+                        d3.select(this).style("cursor", "pointer");
+
+                    })
+                    .on("mouseout", function (d) {
+                        div.transition()
+                            .duration(500)
+                            .style("opacity", 0);
+                        d3.select(this).style("cursor", "default");
+                    });
+                    // .on("click", function (d) {
+                    //     console.log(d);
+                    //     if (colorLegendFilter !== d) {
+                    //         updateDetailedGraph(data, color, aggType, nameSelected, selectedCountriesDetail,
+                    //             colorCode, true, d);
+                    //     } else {
+                    //         updateDetailedGraph(data, color, aggType, nameSelected, selectedCountriesDetail,
+                    //             colorCode, true, null);
+                    //     }
+                    // });
+
+                    detailLegendRects.append("text")
+                        .attr("x", 30)
+                        .attr("y", function (d, i) {
+                            return (legendSpace) + i * (legendSpace);
+                        })// (return (11.25/2 =) 5.625) + i * (5.625)
+                        .text(function (d) {
+                            if (colorCode === "IncomeBucket") {
+                                return legends[d];
+                            }
+                            return d;
+                        });
+
+                    // //these are the same as your column names
+                    //    // .slice(1); //remove the first column name (`date`);
+
+                    var focus = detailLegendRects.select("text") // create group elements to house tooltip text
+                        .data(legendColors.domain()) // bind each column name date to each g element
+                        .enter();
+                    // .append("text") //create one <g> for each columnName
+                    //     .attr("class", "focus");
+
+
+                    focus.append("text") // http://stackoverflow.com/questions/22064083/d3-js-multi-series-chart-with-y-value-tracking
+                        .attr("class", "tooltip")
+                        .attr("x", width + 20) // position tooltips
+                        .attr("y", function (d, i) {
+                            return (legendSpace) + i * (legendSpace);
+                        });
+
+                }
+                function getLegendsColors(colorCode) {
+                    if (colorCode === "IncomeBucket") {
+                        return iColor;
+                    } else if (colorCode === "EducationIndexBucket") {
+                        return eIndexColor;
+                    } else if (colorCode === "Region") {
+                        return rColor;
+                    }
+                }
+
+                // }
+
+                var running = false;
+                var timer;
+
+                $("button").on("click", function () {
+
+                    var duration = 3000,
+                        maxstep = 2014,
+                        minstep = 1995;
+
+                    if (running == true) {
+
+                        $("button").html("Play");
+                        running = false;
+                        clearInterval(timer);
+
+                    }
+                    /*
+        else if (running == true && $("#slider").val() == maxstep) {
+                         running = true;
+                         $("button").html("Play1");
+
+
+                    }
+        */
+                    else if (!running) {
+
+                        $("button").html("Pause");
+
+                        sliderValue = $("#slider").val();
+
+                        timer = setInterval(function () {
+                            if (sliderValue < maxstep) {
+                                sliderValue++;
+                                $("#slider").val(sliderValue);
+                                $('#range').html("<h3>Year: " + sliderValue + "</h3>");
+                            }
+                            $("#slider").val(sliderValue);
+                            createScatterPlot(sliderValue);
+
+                        }, duration);
+                        running = true;
+
+
+                    }
+
+                });
+
+                $("#slider").on("change", function () {
+                    createScatterPlot(findClosestYear($("#slider").val()));
+                    $("#range").html("<h3> Year: " + $("#slider").val() + "</h3>");
+                    clearInterval(timer);
+                    $("button").html("Play");
+                });
+
+                d3.select('#colorCode')
+                    .on("change", function () {
+                        var sect = document.getElementById("colorCode");
+                        var section = sect.options[sect.selectedIndex].value;
+                        createScatterPlot(findClosestYear($("#slider").val()));
+                    });
+                update = function () {
+
+                    d3.selectAll(".dot")
+                        .transition()
+                        .duration(1000)
+                        .attr("cy", function (d) {
+                            if (d.Year === findClosestYear($("#slider").val())) {
+                                return y(d.GII);
+                            }
+                            // switch ($("#slider").val()) {
+                            //     case "2000":
+                            //         return y(d.loan9900);
+                            //         break;
+                            //     case "2001":
+                            //         return y(d.loan0001);
+                            //         break;
+                            //     case "2002":
+                            //         return y(d.loan0102);
+                            //         break;
+                            //     case "2003":
+                            //         return y(d.loan0203);
+                            //         break;
+                            //     case "2004":
+                            //         return y(d.loan0304);
+                            //         break;
+                            //     case "2005":
+                            //         return y(d.loan0405);
+                            //         break;
+                            //     case "2006":
+                            //         return y(d.loan0506);
+                            //         break;
+                            //     case "2007":
+                            //         return y(d.loan0607);
+                            //         break;
+                            //     case "2008":
+                            //         return y(d.loan0708);
+                            //         break;
+                            //     case "2009":
+                            //         return y(d.loan0809);
+                            //         break;
+                            //     case "2010":
+                            //         return y(d.loan0910);
+                            //         break;
+                            //     case "2011":
+                            //         return y(d.loan1011);
+                            //         break;
+                            // }
+                        })
+                        .transition()
+                        .duration(1000)
+                        .attr("cx", function (d) {
+                            if (d.Year === findClosestYear($("#slider").val())) {
+                                return x(d.EI);
+                            }
+                            // switch ($("#slider").val()) {
+                            //     case "2000":
+                            //         return x(d.TF9900);
+                            //         break;
+                            //     case "2001":
+                            //         return x(d.TF0001);
+                            //         break;
+                            //     case "2002":
+                            //         return x(d.TF0102);
+                            //         break;
+                            //     case "2003":
+                            //         return x(d.TF0203);
+                            //         break;
+                            //     case "2004":
+                            //         return x(d.TF0304);
+                            //         break;
+                            //     case "2005":
+                            //         return x(d.TF0405);
+                            //         break;
+                            //     case "2006":
+                            //         return x(d.TF0506);
+                            //         break;
+                            //     case "2007":
+                            //         return x(d.TF0607);
+                            //         break;
+                            //     case "2008":
+                            //         return x(d.TF0708);
+                            //         break;
+                            //     case "2009":
+                            //         return x(d.TF0809);
+                            //         break;
+                            //     case "2010":
+                            //         return x(d.TF0910);
+                            //         break;
+                            //     case "2011":
+                            //         return x(d.TF1011);
+                            //         break;
+                            // }
+                        });
+                };
+
+            });
+
+    });
+
+</script>
+
+</body>

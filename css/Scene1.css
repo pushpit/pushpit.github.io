@@ -97,13 +97,13 @@ div.tooltip {
     max-width: 350px;
     max-height: 100px;
     padding: 2px;
-    font: 20px sans-serif;
-    font-weight: bold;
-    background: black;
-    border: 0px;
+    font: 16px "Lucida Grande";
+    font-weight: normal;
+    background: #282828;
+    border: 1px;
     border-radius: 8px;
     pointer-events: none;
-    color: yellow;
+    color: #E8E8E8;
 }
 .d3-tip {
     line-height: 1;
