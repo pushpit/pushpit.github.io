@@ -29,21 +29,32 @@
             <a class="navbar-brand" href="#">DDV Final Project</a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="./index.html">Home</a></li>
+            <li class="active"><a href="./index.html">About</a></li>
             <li><a href="./Scene1.html">Page 1</a></li>
             <li><a href="./Scene2.html">Page 2</a></li>
         </ul>
     </div>
 </nav>
 <div class="container">
+    <!--<div>-->
+        <!--&lt;!&ndash;<h3>ChartOptions:</h3>&ndash;&gt;-->
+        <!--<label for="comparisonType"><h5>Chart Option:</h5></label>-->
+        <!--<select id="comparisonType" name="comparisonType">-->
+            <!--<option value="GIIvEI" selected="selected">GII vs EI</option>-->
+            <!--<option value="PercentRep">% of Federal legislature seats hold by women vs % GDP spent on Education</option>-->
+            <!--&lt;!&ndash;<option value="EducationIndexBucket" selected="selected">EducationIndexBucket</option>&ndash;&gt;-->
+        <!--</select>-->
+    <!--</div>-->
+    <span id="pageHeading"><h1>Gender Inequality vs Education Index</h1></span>
     <span id="range"><h3>Year: 1995</h3></span>
     <input id="slider" type="range" min="1995" max="2014" value="1995" step="1"/>
     <div>
         <table style="width:100%">
             <tr>
                 <td style="float: left">
-                    <h3>ColorCode:</h3>
-                    <select id="colorCode">
+                    <!--<h3>ColorCode:</h3>-->
+                    <label for="colorCode"><h5>ColorCode:</h5></label>
+                    <select id="colorCode" name="colorCode">
                         <option value="IncomeBucket" >IncomeBucket</option>
                         <option value="Region">Region</option>
                         <option value="EducationIndexBucket" selected="selected">EducationIndexBucket</option>
@@ -74,7 +85,7 @@
         var margin = {
             top: 20,
             right: 20,
-            bottom: 30,
+            bottom: 50,
             left: 60
         }, width = 725 - margin.left - margin.right, height = 600 - margin.top - margin.bottom;
 
@@ -109,6 +120,11 @@
         var rColor = d3.scale.category20();
         var eIndexColor = d3.scale.category10();
 
+        var zoomBeh = d3.behavior.zoom()
+            .x(x)
+            .y(y)
+            .scaleExtent([0, 500])
+            .on("zoom", zoom);
         var svg = d3.select("#chart")
             .append("svg")
             .attr("class", "chart")
@@ -117,10 +133,26 @@
             .attr("height", height + margin.top + margin.bottom)
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+            // .call(zoomBeh);
+
+        function zoom() {
+            svg.select(".x axis").call(xAxis);
+            svg.select(".y axis").call(yAxis);
+
+            svg.selectAll(".dot")
+                .attr("transform", transform);
+        }
+        function transform(d) {
+            return "translate(" + x(d.EI) + "," + y(d.GII) + ")";
+        }
 
         d3.csv("https://raw.githubusercontent.com/pushpit/pushpit.github.io/master/data/All_data_for_Scene1.csv",
             function (error, data) {
-
+                d3.csv("https://raw.githubusercontent.com/pushpit/pushpit.github.io/master/data/percentofFederalFinal.csv",
+                    function(error, percentData) {
+                        // console.log(pData);
+                        // return pData;
+                    // console.log(percentData);
                 let allYears = [];
                 data.forEach(function (d) { // Make every date in the csv data a javascript date object format
                     d.date = parseDate(d["Year"]);
@@ -148,61 +180,51 @@
                     .values());
 
 
-                // //legend y position
-                // var LYP = 300,
-                //     LXP = 570;
-                //
-                // svg.append("text").attr("class", "label").attr("x", LXP - 5).attr("y", LYP).text("Institution Type").style("font-weight", "bold");
-                //
-                // //color legend
-                // svg.append("circle").attr("cx", LXP).attr("cy", LYP + 20).attr("r", 12).style("fill", "rgb(53, 135, 212)").attr("stroke", "#000");
-                // svg.append("text").attr("class", "label").attr("x", LXP + 15).attr("y", LYP + 25).style("text-anchor", "start").text(function (d) {
-                //     return "Public";
-                // });
-                // svg.append("circle").attr("cx", LXP).attr("cy", LYP + 50).attr("r", 12).style("fill", "rgb(77, 175, 74)").attr("stroke", "#000");
-                // svg.append("text").attr("class", "label").attr("x", LXP + 15).attr("y", LYP + 55).style("text-anchor", "start").text(function (d) {
-                //     return "Nonprofit";
-                // });
-                // svg.append("circle").attr("cx", LXP).attr("cy", LYP + 80).attr("r", 12).style("fill", "rgb(228, 26, 28)").attr("stroke", "#000");
-                // svg.append("text").attr("class", "label").attr("x", LXP + 15).attr("y", LYP + 85).style("text-anchor", "start").text(function (d) {
-                //     return "For-profit";
-                // });
-                // svg.append("text").attr("class", "label").attr("x", LXP - 5).attr("y", LYP + 110).text("Enrollment").style("font-weight", "bold");
-                //
-                // //size legend
-                // svg.append("circle").attr("cx", LXP).attr("cy", LYP + 30 + 110).attr("r", 20).style("fill", "#bbb").attr("stroke", "#000");
-                // svg.append("text").attr("class", "label").attr("x", LXP + 25).attr("y", LYP + 140).style("text-anchor", "start").text("27,000");
-                // svg.append("circle").attr("cx", LXP).attr("cy", LYP + 60 + 110).attr("r", 15).style("fill", "#bbb").attr("stroke", "#000");
-                // svg.append("text").attr("class", "label").attr("x", LXP + 25).attr("y", LYP + 170).style("text-anchor", "start").text("18,000+");
-                // svg.append("circle").attr("cx", LXP).attr("cy", LYP + 80 + 110).attr("r", 9).style("fill", "#bbb").attr("stroke", "#000");
-                // svg.append("text").attr("class", "label").attr("x", LXP + 25).attr("y", LYP + 190).style("text-anchor", "start").text("9,000+");
-                // svg.append("circle").attr("cx", LXP).attr("cy", LYP + 93 + 110).attr("r", 4).style("fill", "#bbb").attr("stroke", "#000");
-                // svg.append("text").attr("class", "label").attr("x", LXP + 25).attr("y", LYP + 210).style("text-anchor", "start").text("100+");
-
-
                 function findClosestYear(year) {
                     let nYear = parseInt(year);
                     let closestYear = Math.max.apply(null, allYears.filter(function(v){return v <= nYear})) + "";
                     console.log("Year: " + year + ", ClosestYear: " + year);
                     return closestYear;
                 }
+
+                function filterDataForLegend(data, colorLegendFilter) {
+                    return data.filter(function(d) {
+                        let colorCode = $("#colorCode").val();
+                        if (colorCode === "IncomeBucket") {
+                            return d.IncomeBucket === colorLegendFilter;
+                        } else if (colorCode === "EducationIndexBucket") {
+                            return d.EducationIndexBucket === colorLegendFilter;
+                        } else if (colorCode === "Region") {
+                            return d.Region === colorLegendFilter;
+                        }
+                    });
+                }
                 createScatterPlot("1995");
                 function clear() {
                     svg.selectAll("*").remove();
                 }
                 //circles
-                function createScatterPlot(year) {
+                function createScatterPlot(year, colorLegendFilter) {
+                    console.log(percentData);
                     clear();
                     data = data.filter(function (d) {
                         return d.GII && d.EI;
                     });
-                    x.domain(d3.extent(data, function (d) {
-                        return d.EI;
+                    let comparisonType = $("#comparisonType").val();
+                    let filteredData = comparisonType && comparisonType === "PercentRep" ? percentData : data;
+                    if (colorLegendFilter) {
+                        filteredData = filterDataForLegend(data, colorLegendFilter);
+                    }
+
+                    x.domain(d3.extent(filteredData, function (d) {
+                        return comparisonType && comparisonType === "PercentRep" ? d.GDPPercent : d.EI;
                     }));
-                    y.domain(d3.extent(data, function(d) {
-                        return d.GII;
+                    y.domain(d3.extent(filteredData, function(d) {
+                        return comparisonType && comparisonType === "PercentRep" ? d.FedPercent : d.GII;
                     }));
 
+
+                    // zoomBeh.x(x.domain()).y(y.domain());x
                     //x axis
                     svg.append("g")
                         .attr("class", "x axis")
@@ -210,8 +232,8 @@
                         .call(xAxis)
                         .append("text")
                         .attr("class", "label")
-                        .attr("x", width)
-                        .attr("y", -6)
+                        .attr("x", width/2)
+                        .attr("y", 30)
                         .style("text-anchor", "end")
                         .text("Education Index");
 
@@ -223,15 +245,17 @@
                         .attr("class", "label")
                         .attr("transform", "rotate(-90)")
                         .attr("x", -200)
-                        .attr("y", -40)
+                        .attr("y", -50)
                         .attr("dy", ".71em")
                         .style("text-anchor", "end")
                         .text("Gender Inequality Index(GII)");
                     svg.selectAll(".dot")
-                        .data(data.filter(function (d) {
+                        .data(filteredData.filter(function (d) {
                             return d.Year === year;
                         }).sort(function (a, b) {
-                            return b.EI - a.EI;
+                            return comparisonType && comparisonType === "PercentRep" ?
+                                b.GDPPercent - a.GDPPercent :
+                                b.EI - a.EI;
                         }))
                         .enter()
                         .append("circle")
@@ -242,11 +266,13 @@
                             })//gave it a base 3.4 plus a proportional amount to the enrollment
                         .attr("cx",
                             function (d) {
-                                return x(d.EI);
+                                return x(comparisonType && comparisonType === "PercentRep"?
+                                    d.GDPPercent : d.EI);
                             })
                         .attr("cy",
                             function (d) {
-                                return y(d.GII);
+                                return y(comparisonType && comparisonType === "PercentRep" ?
+                                    d.FedPercent: d.GII);
                             })
                         .style("fill",
                             function (d) {
@@ -289,7 +315,7 @@
                     //     .style("text-anchor", "end")
                     //     .attr("class", "legend-heading")
                     //     .text(getLegendHeading(colorCode));
-                    let tx = width + ((margin.right/3) -15),
+                    let tx = width + ((margin.right/3) - 5),
                         ty = legendSpace - 8;
                     let detailLegend = svg.selectAll(".legend").data(legendColors.domain());
                     let colorLegendFIlter = "";
@@ -298,15 +324,15 @@
                             (legendSpace + i * legendSpace + 180) + ")"; });
                     detailLegendRects.append("rect")
                         .attr("width", function (d) {
-                            // if (d === colorLegendFilter) {
-                            //     return 15;
-                            // }
+                            if (d === colorLegendFilter) {
+                                return 15;
+                            }
                             return 10;
                         })
                         .attr("height", function (d) {
-                            // if (d === colorLegendFilter) {
-                            //     return 15;
-                            // }
+                            if (d === colorLegendFilter) {
+                                return 15;
+                            }
                             return 10;
                         })
                         .attr("x", 10)
@@ -341,17 +367,15 @@
                             .duration(500)
                             .style("opacity", 0);
                         d3.select(this).style("cursor", "default");
+                    })
+                    .on("click", function (d) {
+                        console.log(d);
+                        if (colorLegendFilter !== d) {
+                            createScatterPlot(year, d);
+                        } else {
+                            createScatterPlot(year, null);
+                        }
                     });
-                    // .on("click", function (d) {
-                    //     console.log(d);
-                    //     if (colorLegendFilter !== d) {
-                    //         updateDetailedGraph(data, color, aggType, nameSelected, selectedCountriesDetail,
-                    //             colorCode, true, d);
-                    //     } else {
-                    //         updateDetailedGraph(data, color, aggType, nameSelected, selectedCountriesDetail,
-                    //             colorCode, true, null);
-                    //     }
-                    // });
 
                     detailLegendRects.append("text")
                         .attr("x", 30)
@@ -359,28 +383,24 @@
                             return (legendSpace) + i * (legendSpace);
                         })// (return (11.25/2 =) 5.625) + i * (5.625)
                         .text(function (d) {
-                            if (colorCode === "IncomeBucket") {
+                            if ($("#colorCode").val() === "IncomeBucket") {
                                 return legends[d];
                             }
                             return d;
                         });
 
-                    // //these are the same as your column names
-                    //    // .slice(1); //remove the first column name (`date`);
 
                     var focus = detailLegendRects.select("text") // create group elements to house tooltip text
                         .data(legendColors.domain()) // bind each column name date to each g element
                         .enter();
-                    // .append("text") //create one <g> for each columnName
-                    //     .attr("class", "focus");
 
-
-                    focus.append("text") // http://stackoverflow.com/questions/22064083/d3-js-multi-series-chart-with-y-value-tracking
+                    focus.append("text")
                         .attr("class", "tooltip")
-                        .attr("x", width + 20) // position tooltips
+                        .attr("x", width + 20)
                         .attr("y", function (d, i) {
                             return (legendSpace) + i * (legendSpace);
                         });
+
 
                 }
                 function getLegendsColors(colorCode) {
@@ -404,21 +424,13 @@
                         maxstep = 2014,
                         minstep = 1995;
 
-                    if (running == true) {
+                    if (running) {
 
                         $("button").html("Play");
                         running = false;
                         clearInterval(timer);
 
                     }
-                    /*
-        else if (running == true && $("#slider").val() == maxstep) {
-                         running = true;
-                         $("button").html("Play1");
-
-
-                    }
-        */
                     else if (!running) {
 
                         $("button").html("Pause");
@@ -455,103 +467,33 @@
                         var section = sect.options[sect.selectedIndex].value;
                         createScatterPlot(findClosestYear($("#slider").val()));
                     });
-                update = function () {
 
-                    d3.selectAll(".dot")
-                        .transition()
-                        .duration(1000)
-                        .attr("cy", function (d) {
-                            if (d.Year === findClosestYear($("#slider").val())) {
-                                return y(d.GII);
-                            }
-                            // switch ($("#slider").val()) {
-                            //     case "2000":
-                            //         return y(d.loan9900);
-                            //         break;
-                            //     case "2001":
-                            //         return y(d.loan0001);
-                            //         break;
-                            //     case "2002":
-                            //         return y(d.loan0102);
-                            //         break;
-                            //     case "2003":
-                            //         return y(d.loan0203);
-                            //         break;
-                            //     case "2004":
-                            //         return y(d.loan0304);
-                            //         break;
-                            //     case "2005":
-                            //         return y(d.loan0405);
-                            //         break;
-                            //     case "2006":
-                            //         return y(d.loan0506);
-                            //         break;
-                            //     case "2007":
-                            //         return y(d.loan0607);
-                            //         break;
-                            //     case "2008":
-                            //         return y(d.loan0708);
-                            //         break;
-                            //     case "2009":
-                            //         return y(d.loan0809);
-                            //         break;
-                            //     case "2010":
-                            //         return y(d.loan0910);
-                            //         break;
-                            //     case "2011":
-                            //         return y(d.loan1011);
-                            //         break;
-                            // }
-                        })
-                        .transition()
-                        .duration(1000)
-                        .attr("cx", function (d) {
-                            if (d.Year === findClosestYear($("#slider").val())) {
-                                return x(d.EI);
-                            }
-                            // switch ($("#slider").val()) {
-                            //     case "2000":
-                            //         return x(d.TF9900);
-                            //         break;
-                            //     case "2001":
-                            //         return x(d.TF0001);
-                            //         break;
-                            //     case "2002":
-                            //         return x(d.TF0102);
-                            //         break;
-                            //     case "2003":
-                            //         return x(d.TF0203);
-                            //         break;
-                            //     case "2004":
-                            //         return x(d.TF0304);
-                            //         break;
-                            //     case "2005":
-                            //         return x(d.TF0405);
-                            //         break;
-                            //     case "2006":
-                            //         return x(d.TF0506);
-                            //         break;
-                            //     case "2007":
-                            //         return x(d.TF0607);
-                            //         break;
-                            //     case "2008":
-                            //         return x(d.TF0708);
-                            //         break;
-                            //     case "2009":
-                            //         return x(d.TF0809);
-                            //         break;
-                            //     case "2010":
-                            //         return x(d.TF0910);
-                            //         break;
-                            //     case "2011":
-                            //         return x(d.TF1011);
-                            //         break;
-                            // }
-                        });
-                };
+                // d3.select("#comparisonType")
+                //     .on("change", function () {
+                //         createScatterPlot(findClosestYear($("#slider").val()));
+                //     })
+                // update = function () {
+                //
+                //     d3.selectAll(".dot")
+                //         .transition()
+                //         .duration(1000)
+                //         .attr("cy", function (d) {
+                //             if (d.Year === findClosestYear($("#slider").val())) {
+                //                 return y(d.GII);
+                //             }
+                //         })
+                //         .transition()
+                //         .duration(1000)
+                //         .attr("cx", function (d) {
+                //             if (d.Year === findClosestYear($("#slider").val())) {
+                //                 return x(d.EI);
+                //             }
+                //         });
+                // };
 
             });
 
+            });
     });
 
 </script>

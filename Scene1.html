@@ -14,7 +14,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
     <link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet"/>
-
+    <title>Effects of IncomeLevel, EducationLevel & Region on GII</title>
 </head>
 <body>
 <!-- load the d3.js library -->
@@ -24,7 +24,7 @@
             <a class="navbar-brand" href="#">DDV Final Project</a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="./index.html">Home</a></li>
+            <li class="active"><a href="./index.html">About</a></li>
             <li><a href="./Scene1.html">Page 1</a></li>
             <li><a href="./Scene2.html">Page 2</a></li>
         </ul>
@@ -33,7 +33,7 @@
 
 <div class="container">
     <h1>Gender Inequality Index (GII) </h1>
-    <h3>GII is aggregated(median) across different aggregation type:
+    <h3>GII is aggregated(median) across different grouping type:
         <h4>
             <ul>
                 <li>Income Bucket: Based on GDP per capita USD (PPP)</li>
@@ -52,7 +52,7 @@
         <table style="width:100%">
             <tr>
                 <td>
-        <h3>Select Data Aggregation level:</h3>
+        <h3>Select Data Grouping level:</h3>
         <select id="aggType">
             <option value="IncomeBucket" selected="selected">IncomeBucket</option>
             <option value="Region">Region</option>
@@ -80,6 +80,7 @@
     <div id="graphArea" class="graph">
     </div>
     <div id="detailGraphIntro" style="display: none">
+        <hr/>
         <table style="width:100%">
             <tr>
                 <td>
@@ -700,7 +701,9 @@
                         .style("left", (d3.event.pageX) + "px")
                         .style("top", (d3.event.pageY)-20 + "px");
 
-                    d3.select(this).style("cursor", "pointer");
+                    if (aggType !== "Country") {
+                        d3.select(this).style("cursor", "pointer");
+                    }
 
                 })
                 .on("mouseout",	function(d) {        //undo everything on the mouseout

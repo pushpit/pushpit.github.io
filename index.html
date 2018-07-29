@@ -10,42 +10,301 @@
     <!-- Bootstrap theme -->
     <link href="./css/bootstrap-theme.min.css" rel="stylesheet">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <title>Hello, world!</title>
+    <title>Data Visualization Final Project</title>
+    <style>
+        body { font: 16px Arial;}
+
+        li{
+            margin: 10px 0;
+        }
+        ul{
+            line-height: 130%;
+        }
+    </style>
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <!--<div class="container">-->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
             <a class="navbar-brand" href="#">DDV Final Project</a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="./index.html">About</a></li>
-                <li><a href="./Scene1.html">Page 1</a></li>
-                <li><a href="./Scene2.html">Page 2</a></li>
-                <!--<li class="dropdown">-->
-                    <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"-->
-                       <!--aria-expanded="false">Dropdown <span class="caret"></span></a>-->
-                    <!--<ul class="dropdown-menu">-->
-                        <!--<li><a href="#">Action</a></li>-->
-                        <!--<li><a href="#">Another action</a></li>-->
-                        <!--<li><a href="#">Something else here</a></li>-->
-                        <!--<li role="separator" class="divider"></li>-->
-                        <!--<li class="dropdown-header">Nav header</li>-->
-                        <!--<li><a href="#">Separated link</a></li>-->
-                        <!--<li><a href="#">One more separated link</a></li>-->
-                    <!--</ul>-->
-                <!--</li>-->
-            </ul>
-        </div><!--/.nav-collapse -->
-    <!--</div>-->
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="./index.html">About</a></li>
+            <li><a href="./Scene1.html">Page 1</a></li>
+            <li><a href="./Scene2.html">Page 2</a></li>
+        </ul>
+    </div>
 </nav>
+
+<div class="container">
+    <div class="jumbotron">
+        <h1>Data Visualization Final Project</h1>
+    </div>
+    <div id="essay">
+        <p>
+            <h3>Introduction</h3>
+            As part of this visualization project, I am analyzing the Gender Inequality across the world and comparing
+            some other aspects related to income and education levels. The question I am trying to answer is whether the
+            education level, GDP, income level has any impact on the gender inequalities.
+        </p>
+        <p>
+            <h3>Data Collection</h3>
+        <ul>
+            <li>
+                Gender Inequality Index:  I have downloaded the data from <a href = "http://hdr.undp.org/en/content/gender-inequality-index-gii">here</a> in the csv format. Each row in the csv represents a country and its GII values for different years.
+            </li>
+            <li>
+                Gross National Income per capita PPP (current US$) : I have downloaded the data from <a href="https://datahelpdesk.worldbank.org/knowledgebase/articles/378834-how-does-the-world-bank-classify-countries">here</a> The countries are classified into 4 different income buckets (low, high, lower-medium, upper-medium).
+            </li>
+            <li>
+                Education Index : I have downloaded the data from <a href="http://hdr.undp.org/en/indicators/103706">here</a>. The countries are classified into 4 different education level (as indicated by their education index) buckets (low, high, lower-medium, upper-medium).
+            </li>
+        </ul>
+        </p>
+        <p>
+            <h3>Data Preparation</h3>
+            <ul>
+                <li>
+                    Converted some of the files to vertical list format i.e. in some of the data files all the data for each country is specified in a single row, which is not easy to join, so I pivoted those data files on the year columns. I have used python  (Pandas) to create dataframes and pivot the data.
+                </li>
+                <li>
+                    Cleaned up some country name formatting differences (as in one file the country names are specified using camel casing). For this also, I used custom python script.
+                </li>
+                <li>
+                    I have joined data representing various measures like GNI (Gross National Income) per capita with GII (Gender Inequality Index) data based on country and year and prepared the final sets which are used to build the charts.
+                </li>
+            </ul>
+        </p>
+        <p>
+            <h3>
+                Charts descriptions
+            </h3>
+            <ul>
+                <li>
+                    <h4>Page 1</h4>
+                    <ul>
+                        <li>
+
+                                <a href="./Scene1.html">Page 1</a> in this visualization show
+                            Gender Inequality Index (GII) aggregated(median) across different parameters:
+                            <ul>
+                                <li>
+                                    <b>Income Bucket: Based on GDP per capita USD (PPP)</b> : Countries are grouped
+                                    into four buckets Low(L), Low-Middle(LM), Upper-Middle(UM), High(H) based on their
+                                    per capita GDP USD (PPP). This grouping level is selected by default. This grouping
+                                    gives us a view of how GII varies over the period of time for countries in different income
+                                    bucket. After seeing the chart it is quite evident that the countries in lower income
+                                    bucket have higher gender inequality. User can drill down to details of the countries
+                                    in a particular bucket by clicking on the line for that bucket.
+                                </li>
+                                <li>
+                                    <b>Regions of the world</b>: Countries are grouped into different regions they belonged to.
+                                    User can select this grouping level by the selecting this option from the grouping
+                                    drop-down. This grouping gives us a view of how GII varies over the period of time for
+                                    countries in different regions. User can drill down to details of the countries in a
+                                    particular bucket by clicking on the line for that bucket.
+                                </li>
+                                <li>
+                                    <b>Education index</b>: Countries are grouped into 4 different buckets based on their
+                                    <a href="http://hdr.undp.org/en/indicators/103706">Education Index</a>. User can select
+                                    this grouping from the grouping drop-down. After seeing the chart it is evident that
+                                    countries with higher level of education tends to have lower GII. User can drill down to
+                                    details of the countries in a particular bucket by clicking on the line for that bucket.
+
+                                </li>
+                                <li>
+                                    <b>Country</b>: This is the detailed country level view presented in the grouping chart
+                                    for creating a martini glass structure, where users can look at some of the grouped data
+                                    and then can dive into the details. Main theme I want to keep here for just the grouping chart
+                                    (see detailed chart description below), is to give users ability to explore data without drill
+                                    downs to detailed chart. By default only a few countries are selected, so that users are not
+                                    overwhelmed with the data, but a multi-select country box is presented to user, so that they can
+                                    select all the countries they want to (for better experience select a maximum of 10 countries).
+                                    There are no drill downs for this view as it is already at a granular country level.
+                                </li>
+                                <li>
+                                    <b>Detailed Charts:</b> Three of the grouping charts (IncomeBucket, EducationIndexBucket & Region)
+                                    have provided user the ability to drill down to country level details. On clicking any of the line
+                                    in the grouping chart user can drill down to the detailed chart. All the countries belonging to the group
+                                    selected are displayed in the detailed chart. Detailed chart is provided to color coding option, so that
+                                    user can drill down in a particular bucket and color code the countries within that bucket based on other
+                                    grouping types. This provides a strong feature for e.g. if user drill down on high income bucket and then
+                                    color code the detailed graph with education index, user can answer some interesting question like Kuwait/Qatar
+                                    though high income countries have lower education index which might be contributing to that fact that they have relatively
+                                    high GII compare to their peers in the income bucket. The color legends in the detailed charts can be used to filter data.
+                                </li>
+                                <li>
+                                    <b>General features:</b>
+                                    <ul>
+                                        <li>
+                                            <b>Tooltips: </b> Tooltips are provided on all the data points in both grouped chart as well as detailed chart.
+                                        </li>
+                                        <li>
+                                            <b>Color Code:</b> Appropriate color codes are provided to distinguish between various grouping levels.
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h4>Page 2</h4>
+                    <ul>
+                        <li>
+                            <a href="./Scene2.html">Page 2</a> in this visualization show
+                                <a href="https://en.wikipedia.org/wiki/Gender_Inequality_Index">
+                                    Gender Inequality Index (GII)
+                                </a>
+                            vs <a href="https://en.wikipedia.org/wiki/Education_Index"> Education Index </a>.
+                            This a scatter plot of these two values. This presented in an interactive slide show format.
+                            <ul>
+                                <li>
+                                    <b>Year slider</b>: A year slider is provided to move from one year to another.
+                                </li>
+                                <li>
+                                    <b>Color Code</b>: Color codes (based on grouping types) are provided for users to color code
+                                    the scatter plot and answer questions different questions.
+                                </li>
+                                <li>
+                                    <b>Legends filter</b>: Users can filter data using legend filters. Both the axis are adjusted to
+                                    spread out the data every time a filter is applied.
+                                </li>
+                                <li>
+                                    <b>Tooltips</b>: Tooltips are provided for all the data points in the scatter plot.
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </p>
+        <p>
+            <h3>Rubric questions</h3>
+            <ul>
+                <li>
+                    <b>Narrative visualization hybrid structure</b>
+                    <ul>
+                        <li>
+                            Part 1 of <a href="./Scene1.html"> Page 1</a>, top level grouping chart, follows a martini glass structure. Users can see
+                            data in a default grouped state (IncomeBucket as selected by the developer) and then can choose various other grouping types.
+                            Users can get all the details for each country in this chart only
+                        </li>
+                        <li>
+                            Part 2 of the page 1 (detailed chart) follows a drill down story structure. Users can click through on the grouping
+                            chart to drill down to country level details.
+                        </li>
+                        <li>
+                            <a href="Scene2.html">Page 2</a> follows a interactive slide show structure. Users are presented with the first
+                            slide (scatter plot for year 1995) and then users can use year slider to interact with the visualization. They can move
+                            the year back-forth and can chage color coding or filter data using legends.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <b>Scene Utilization</b>
+                    <ul>
+                        <li>
+                            Page 1 uses different scenes (grouping charts) to build the long tunnel of martini glass and then provide a scene
+                            to explore data in details.
+                        </li>
+                        <li>
+                            Page 1 detailed chart provide different scenes to color code the drill down data set. Also, I have utilized scenes
+                            to filter data based on color legends or country multi-select box.
+                        </li>
+                        <li>
+                            Page 2 uses scenes based on the year as well as color code to present an interactive slide show of
+                            GII vs EI scatter plot over a period of time with different color coding schemes. Scenes are also utilized here
+                            to filter data based on color code legends.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <b>Annotation Utilization</b>
+                    <ul>
+                        <li>
+                            <b>Tooltip:</b> In page 1, both the grouped level chart as well as the detailed level chart provide tooltips
+                            to the user. In page 2 also, users are provided with tooltips through out the scatter plot.
+                        </li>
+                        <li>
+                            I have added the functionality to change the pointer to hand when mouse hovers on click-able data point. This provide
+                            user information regarding the visualization and drill down opportunity.
+                        </li>
+                        <li>
+                            Color code are used appropriately and should help users in consuming the charts.
+                        </li>
+                        <li>
+                            Heading for detailed chart is displayed based on the bucket selected from the grouping chart.
+                        </li>
+                        <li>
+                            Year selected from the year slider is also shown to the user.
+                        </li>
+                        <li>
+                            When selecting a legend filter, the rectangle for that filter grows in size a little bit to
+                            notify user of his/her selection.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <b>Parameter Utilization</b>
+                    <ul>
+                        <li>
+                            Page 1 use grouping level parameter(grouping drop-down) to generate line chart for various grouping level. Also, in country level
+                            grouping scene, "country multi-select" is used to provide parameters for filtering the data and
+                            chaging the line chart.
+                        </li>
+                        <li>
+                            In page 1 detailed level chart, color code parameter (color code drop-down) is used to color
+                            code the line chart. Also, "country multi-select" is used to provide parameters for filtering the data.
+                            Legends are also used as parameters to filter the data and change the line chart.
+                        </li>
+                        <li>
+                            Page 2 use year (year slider) as parameter to generate the scatter plot for that particular year.
+                            In addition to that color code and legends are also used to create different scenes(views) of the
+                            scatter plot.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <b>Trigger Utilization</b>
+                    <ul>
+                        <li>
+                            Page 1 use grouping level parameter(grouping drop-down) to generate line chart for various grouping level.
+                            Every time a new grouping level is selected the data in the chart changes, as well as the legends change.
+                            When user select country level grouping, they are provided with the country multi select from which they
+                            can select the country to trigger a new scene with line charts for the countries that are selected. In IncomeBucket,
+                            EducationIndexBucket & Region grouping chart user can trigger the generation of detailed chart by clicking on
+                            each group line.
+                        </li>
+                        <li>
+                            In Page 1 detailed chart, triggers are added to change the chart and legends when user select different color codes.
+                            The triggers to change chart are also there for country and legend filters.
+                        </li>
+                        <li>
+                            Page 2 has triggers based on the year slider. The scatter plot is changed based on the year selected. There is a
+                            trigger based on the color code selection to change the colors in scatter plot as well as change the legend.
+                            The trigger to change chart is also there for legend filters. There is a trigger to change the axes domain
+                            based on the legend filters.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </p>
+        <p>
+            <h3>Conclusion</h3>
+            <ul>
+                <li>
+                    Overall each of the page designed as part of this project, provides sufficient overview and help
+                    user quickly see the affects of different factors on Gender Inequality. I have followed the principles of
+                    narrative visualization and effectively use scenes to depict different data views. Also, I have tooltips and
+                    other annotation all through out the charts. I have effectively used parameters to trigger the changes in the charts
+                    as well as related elements on the page. I have provided different filtering mechanism, so that users can filter data esp.
+                    in charts which are showing lots of information (like GII for all the countries).
+                </li>
+            </ul>
+        </p>
+    </div>
+</div>
 </body>
 </html>
