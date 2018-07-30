@@ -442,7 +442,11 @@
                 div.transition()
                     .duration(200)
                     .style("opacity", 1);
-                div	.html( d.displayName + "<br/>")
+                let xVal = dx.invert(d3.mouse(this)[0]);
+                let yVal = dy.invert(d3.mouse(this)[1]);
+                div	.html( "Country: " + d.displayName + "<br/>" +
+                    "Year: " + xVal.getFullYear() + "<br/>" +
+                    "GII: " + yVal + "<br/>")
                     .style("left", (d3.event.pageX) + "px")
                     .style("top", (d3.event.pageY)-20 + "px");
             })
