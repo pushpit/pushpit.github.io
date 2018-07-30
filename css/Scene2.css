@@ -164,3 +164,18 @@ h4 {
 #schoolinfo {
     position: absolute;
 }
+
+.d3-an-container .annotation {
+    cursor: move;
+}
+.d3-an-container .annotation.dragging {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+    text-decoration: underline;
+}
+.d3-an-text-edit {
+    position: fixed;
+    top: 40px;
+    left: 40px;
+}

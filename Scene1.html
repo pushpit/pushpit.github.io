@@ -643,10 +643,18 @@
 
 
             let flatMapData=[];
+            let bucketMaxGII = [];
             filteredData.forEach(function (d) {
+                bucketMaxGII.push(d.values.map(function (d) {
+                    return d.GII;
+                }).reduce(function(l, e) {
+                  return e > l ? e : l;
+                }));
                 d.values.forEach(function(c) {flatMapData.push(c);})
-            })
-            var points = svg.selectAll(".circle").data(flatMapData);
+            });
+
+
+            let points = svg.selectAll(".circle").data(flatMapData);
 
             let scatterPoints = points.enter().append("g").attr("class", "point");
             scatterPoints.append("circle")
@@ -677,6 +685,22 @@
                 d3.select(this).style("cursor", "default");
             });
 
+
+            svg.selectAll(".point").append("text")
+                .attr("x", function (d) {
+                    return x(d.date);
+                }).attr("y", function (d) {
+                return y(d.GII);
+            }).attr("fill", "#00000")
+                .style("font", "bold 15px Monospaced")
+                .text(function (d) {
+                    let gii = d.GII ? parseFloat(d.GII) : 0.0;
+                    if (d.GII && bucketMaxGII.includes(d.GII)) {
+                        return "Highed GII: " + Number((gii).toFixed(3));
+                    } else {
+                        return "";
+                    }
+                });
 
             incomeBucket.append("path")
                 .attr("class", "line")
@@ -844,6 +868,7 @@
 
 
             }
+
         }
 
         function clearAll() {

@@ -19,6 +19,7 @@
     <script src="https://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
     <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
     <link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet"/>
+    <script src="./js/d3-annotate.js"></script>
 
 </head>
 
@@ -223,7 +224,17 @@
                         return comparisonType && comparisonType === "PercentRep" ? d.FedPercent : d.GII;
                     }));
 
+                    let minGII = filteredData.filter(function (d) {
+                        return d.Year === year;
+                    }).reduce(function(l, e) {
+                        return e.GII < l.GII ? e : l;
+                    });
 
+                    let maxGII = filteredData.filter(function (d) {
+                        return d.Year === year;
+                    }).reduce(function(l, e) {
+                        return e.GII > l.GII ? e : l;
+                    });
                     // zoomBeh.x(x.domain()).y(y.domain());x
                     //x axis
                     svg.append("g")
@@ -249,16 +260,24 @@
                         .attr("dy", ".71em")
                         .style("text-anchor", "end")
                         .text("Gender Inequality Index(GII)");
-                    svg.selectAll(".dot")
-                        .data(filteredData.filter(function (d) {
-                            return d.Year === year;
-                        }).sort(function (a, b) {
-                            return comparisonType && comparisonType === "PercentRep" ?
-                                b.GDPPercent - a.GDPPercent :
-                                b.EI - a.EI;
-                        }))
-                        .enter()
-                        .append("circle")
+                    let dots = svg.selectAll(".dot").data(filteredData.filter(function (d) {
+                        return d.Year === year;
+                    }).sort(function (a, b) {
+                        return comparisonType && comparisonType === "PercentRep" ?
+                            b.GDPPercent - a.GDPPercent :
+                            b.EI - a.EI;
+                    }));
+                    let allDots = dots.enter().append("g").attr("class", "dot");
+                    // svg.selectAll(".dot")
+                    //     .data(filteredData.filter(function (d) {
+                    //         return d.Year === year;
+                    //     }).sort(function (a, b) {
+                    //         return comparisonType && comparisonType === "PercentRep" ?
+                    //             b.GDPPercent - a.GDPPercent :
+                    //             b.EI - a.EI;
+                    //     }))
+                    //     .enter()
+                        allDots.append("circle")
                         .attr("class", "dot")
                         .attr("r",
                             function (d) {
@@ -302,7 +321,42 @@
                                 .duration(500)
                                 .style("opacity", 0);
                             // d3.select(this).style("cursor", "default");
-                        })
+                        });
+
+                        svg.selectAll(".dot").append("text")
+                        .attr("x", function (d) {
+                            let xVal = x(d.EI) + 10;
+                            return xVal;
+                        }).attr("y", function (d) {
+                        return y(d.GII) + 5;
+                    }).attr("fill", "#FF5733")
+                            .style("font", "15px Monospaced")
+                            .text(function (d) {
+                        if (d === maxGII) {
+                            return d.Country + " - Highest GII";
+                        } else if (d === minGII) {
+                            return d.Country + " - Lowest GII";
+                        }
+                        else return "";
+                    });
+
+
+                    // var annotation = window.annotation = d3.annotate()
+                    // // .show((d) => d.species !== "versicolor") // .show(true)
+                    //     .show((d, ndx) => ndx % 12 === 0)
+                    //     .text((d) => `${d.Country}: ${d.EI} x ${d.GII}`)
+                    //     .attr('x', (d) => d.box.x + d.box.width)
+                    //     .attr('dy', 4)
+                    //     .attr('dx', 4)
+                    //     .attr('text-anchor', 'start')
+                    //     .container(svg.append('g'));
+                    //
+                    // svg.selectAll('.dot').call(annotation);
+
+                        // .append("text").html(div.html("Country: " + d.Country + "<br/>" + "EI: " + d.EI + "<br/>" + "GII: " + d.GII)
+                        // .style("left", (d3.event.pageX) + "px")
+                        // .style("top", (d3.event.pageY) - 20 + "px"));
+
                     var colorCode = document.getElementById("colorCode");
                     var colorCodeSelected = colorCode.options[colorCode.selectedIndex].value;
 
@@ -459,6 +513,8 @@
                     $("#range").html("<h3> Year: " + $("#slider").val() + "</h3>");
                     clearInterval(timer);
                     $("button").html("Play");
+                }).on("mouseover", function () {
+                    $(this).css("cursor", "pointer");
                 });
 
                 d3.select('#colorCode')

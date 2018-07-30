@@ -54,10 +54,13 @@
                 Gender Inequality Index:  I have downloaded the data from <a href = "http://hdr.undp.org/en/content/gender-inequality-index-gii">here</a> in the csv format. Each row in the csv represents a country and its GII values for different years.
             </li>
             <li>
-                Gross National Income per capita PPP (current US$) : I have downloaded the data from <a href="https://datahelpdesk.worldbank.org/knowledgebase/articles/378834-how-does-the-world-bank-classify-countries">here</a> The countries are classified into 4 different income buckets (low, high, lower-medium, upper-medium).
+                Gross National Income per capita PPP (current US$) : I have downloaded the data from
+                <a href="https://datahelpdesk.worldbank.org/knowledgebase/articles/378834-how-does-the-world-bank-classify-countries">here</a>
+                The countries are classified into 4 different income buckets (low, high, lower-middle, upper-middle).
             </li>
             <li>
-                Education Index : I have downloaded the data from <a href="http://hdr.undp.org/en/indicators/103706">here</a>. The countries are classified into 4 different education level (as indicated by their education index) buckets (low, high, lower-medium, upper-medium).
+                Education Index : I have downloaded the data from <a href="http://hdr.undp.org/en/indicators/103706">here</a>.
+                The countries are classified into 4 different education level (as indicated by their education index) buckets (low, high, lower-medium, upper-medium).
             </li>
         </ul>
         </p>
@@ -93,13 +96,13 @@
                                     into four buckets Low(L), Low-Middle(LM), Upper-Middle(UM), High(H) based on their
                                     per capita GDP USD (PPP). This grouping level is selected by default. This grouping
                                     gives us a view of how GII varies over the period of time for countries in different income
-                                    bucket. After seeing the chart it is quite evident that the countries in lower income
+                                    buckets. After seeing the chart it is quite evident that the countries in lower income
                                     bucket have higher gender inequality. User can drill down to details of the countries
                                     in a particular bucket by clicking on the line for that bucket.
                                 </li>
                                 <li>
                                     <b>Regions of the world</b>: Countries are grouped into different regions they belonged to.
-                                    User can select this grouping level by the selecting this option from the grouping
+                                    User can select this grouping level by selecting this option from the grouping
                                     drop-down. This grouping gives us a view of how GII varies over the period of time for
                                     countries in different regions. User can drill down to details of the countries in a
                                     particular bucket by clicking on the line for that bucket.
@@ -126,7 +129,7 @@
                                     <b>Detailed Charts:</b> Three of the grouping charts (IncomeBucket, EducationIndexBucket & Region)
                                     have provided user the ability to drill down to country level details. On clicking any of the line
                                     in the grouping chart user can drill down to the detailed chart. All the countries belonging to the group
-                                    selected are displayed in the detailed chart. Detailed chart is provided to color coding option, so that
+                                    selected are displayed in the detailed chart. Detailed chart is provided with color coding option, so that
                                     user can drill down in a particular bucket and color code the countries within that bucket based on other
                                     grouping types. This provides a strong feature for e.g. if user drill down on high income bucket and then
                                     color code the detailed graph with education index, user can answer some interesting question like Kuwait/Qatar
@@ -158,14 +161,14 @@
                                     Gender Inequality Index (GII)
                                 </a>
                             vs <a href="https://en.wikipedia.org/wiki/Education_Index"> Education Index </a>.
-                            This a scatter plot of these two values. This presented in an interactive slide show format.
+                            This is a scatter plot of these two values. This is presented in an interactive slide show format.
                             <ul>
                                 <li>
                                     <b>Year slider</b>: A year slider is provided to move from one year to another.
                                 </li>
                                 <li>
                                     <b>Color Code</b>: Color codes (based on grouping types) are provided for users to color code
-                                    the scatter plot and answer questions different questions.
+                                    the scatter plot and answer different questions.
                                 </li>
                                 <li>
                                     <b>Legends filter</b>: Users can filter data using legend filters. Both the axis are adjusted to
@@ -193,10 +196,11 @@
                         </li>
                         <li>
                             Part 2 of the page 1 (detailed chart) follows a drill down story structure. Users can click through on the grouping
-                            chart to drill down to country level details.
+                            chart to drill down to country level details. There are legend and country filters provided to drill-down
+                            to more filtered data set.
                         </li>
                         <li>
-                            <a href="Scene2.html">Page 2</a> follows a interactive slide show structure. Users are presented with the first
+                            <a href="Scene2.html">Page 2</a> follows an interactive slide show structure. Users are presented with the first
                             slide (scatter plot for year 1995) and then users can use year slider to interact with the visualization. They can move
                             the year back-forth and can chage color coding or filter data using legends.
                         </li>
@@ -206,16 +210,24 @@
                     <b>Scene Utilization</b>
                     <ul>
                         <li>
-                            Page 1 uses different scenes (grouping charts) to build the long tunnel of martini glass and then provide a scene
-                            to explore data in details.
+                            Page 1 grouping level chart uses different scenes (grouping charts) to build the long tunnel of martini glass
+                            and then provide a scene to explore data in details. User can switch between different scenes based on the
+                            grouping type that can be selected from drop-down. Also, the detailed country scene in this chart group kept at the
+                            end of the list, which provide a nice flow from overview & grouped information to more detailed exploration of
+                            the data.
                         </li>
                         <li>
-                            Page 1 detailed chart provide different scenes to color code the drill down data set. Also, I have utilized scenes
-                            to filter data based on color legends or country multi-select box.
+                            The detailed chart drill down provide scenes based on the color code. Users can select different color code,
+                            to change the view & color scheme of the chart. The flow of color code is kept same as in the
+                            grouping level charts, in order to be consistent. Also, color legends or country multi-select box
+                            filters provide streamline ways to switch between different scene. For e.g. a user can select
+                            a legend filter, a new scene (view) is displayed and if then user select different countries from
+                            the multi-select box, there is a nice flow to reset the legend filter and apply the country filter.
+                            Similarly, there is a streamline flow among different color coding schemes.
                         </li>
                         <li>
                             Page 2 uses scenes based on the year as well as color code to present an interactive slide show of
-                            GII vs EI scatter plot over a period of time with different color coding schemes. Scenes are also utilized here
+                            <b><i>GII vs EI</i></b> scatter plot over a period of time with different color coding schemes. Scenes are also utilized here
                             to filter data based on color code legends.
                         </li>
                     </ul>
@@ -224,25 +236,35 @@
                     <b>Annotation Utilization</b>
                     <ul>
                         <li>
+                            Page 1: in grouping chart, annotations are provided to show the highest GII value for given
+                            grouping type. The annotations are present on top-right of the data point on the line chart
+                            corresponding to the highest GII. This annotation changes with scene, if user selects a different grouping type.
+                        </li>
+                        <li>
+                            Page 2: Annotations are provided next (right) to the scatter plot circle corresponding to the countries with
+                            maximum and minimum GII in that particular scene. These annotations are changed if user select
+                            different year or apply legend filter. This help users to quickly identify countries with min-max
+                            GII for a given scene.
+                        </li>
+                        <li>
                             <b>Tooltip:</b> In page 1, both the grouped level chart as well as the detailed level chart provide tooltips
-                            to the user. In page 2 also, users are provided with tooltips through out the scatter plot.
+                            to the user. In page 2 also, users are provided with tooltips through out the scatter plot. Tooltips are
+                            provided as mouse over action on the chart components like line, scatter plot circl, legend rectangles etc.
                         </li>
                         <li>
-                            I have added the functionality to change the pointer to hand when mouse hovers on click-able data point. This provide
-                            user information regarding the visualization and drill down opportunity.
+                            I have added the functionality to change the pointer to hand when mouse hovers on click-able data point.
+                            This provides the user information regarding the visualization and drill-down/filter opportunity.
                         </li>
                         <li>
-                            Color code are used appropriately and should help users in consuming the charts.
+                            Color codes are used appropriately and should help users in consuming the information
+                            depicted in the charts.
                         </li>
+
                         <li>
-                            Heading for detailed chart is displayed based on the bucket selected from the grouping chart.
-                        </li>
-                        <li>
-                            Year selected from the year slider is also shown to the user.
-                        </li>
-                        <li>
-                            When selecting a legend filter, the rectangle for that filter grows in size a little bit to
-                            notify user of his/her selection.
+                            The axis labels are also an important annotation item here. User can notice in Page 1 grouping chart,
+                            that Y-axis label change from "Median GII" to "GII" when user goes from
+                            IncomeBucket, EducationIndexBucket & Region group to country and vice-versa.
+
                         </li>
                     </ul>
                 </li>
@@ -252,7 +274,7 @@
                         <li>
                             Page 1 use grouping level parameter(grouping drop-down) to generate line chart for various grouping level. Also, in country level
                             grouping scene, "country multi-select" is used to provide parameters for filtering the data and
-                            chaging the line chart.
+                            changing the line chart.
                         </li>
                         <li>
                             In page 1 detailed level chart, color code parameter (color code drop-down) is used to color
@@ -260,9 +282,9 @@
                             Legends are also used as parameters to filter the data and change the line chart.
                         </li>
                         <li>
-                            Page 2 use year (year slider) as parameter to generate the scatter plot for that particular year.
-                            In addition to that color code and legends are also used to create different scenes(views) of the
-                            scatter plot.
+                            Page 2 use year (year slider at the top) as parameter to generate the scatter plot for that particular year.
+                            In addition to that color code drop down provide parameter to change color scheme of the scatter plot
+                            and generate appropriate legends. Legends also provide params for filtering the data.
                         </li>
                     </ul>
                 </li>
@@ -270,12 +292,14 @@
                     <b>Trigger Utilization</b>
                     <ul>
                         <li>
-                            Page 1 use grouping level parameter(grouping drop-down) to generate line chart for various grouping level.
-                            Every time a new grouping level is selected the data in the chart changes, as well as the legends change.
+                            Page 1 use grouping level parameter(grouping drop-down) to generate line chart for various grouping level. Label is put next to group
+                            type drop-down for directing users to use that trigger. Every time a new grouping level is selected the
+                            data in the chart changes, as well as the legends also change.
                             When user select country level grouping, they are provided with the country multi select from which they
-                            can select the country to trigger a new scene with line charts for the countries that are selected. In IncomeBucket,
-                            EducationIndexBucket & Region grouping chart user can trigger the generation of detailed chart by clicking on
-                            each group line.
+                            can select the country(s) to trigger a new scene with line charts for the countries that are selected. In <b>IncomeBucket,
+                            EducationIndexBucket & Region</b> grouping charts user can trigger the generation of detailed chart by clicking on
+                            each group line. I have made the pointer to change to hand shape when user hover over the line, so that
+                            they can see there is a clickable functionality.
                         </li>
                         <li>
                             In Page 1 detailed chart, triggers are added to change the chart and legends when user select different color codes.
@@ -285,7 +309,22 @@
                             Page 2 has triggers based on the year slider. The scatter plot is changed based on the year selected. There is a
                             trigger based on the color code selection to change the colors in scatter plot as well as change the legend.
                             The trigger to change chart is also there for legend filters. There is a trigger to change the axes domain
-                            based on the legend filters.
+                            based on the legend filter selected. I have made the pointer to change to hand shape wherever a trigger
+                            is available on the scene. There is a trigger when a user select a legend filter, the size of the rectangle
+                            increases a little bit to provide user the information that a particular legend filter is selected.
+                        </li>
+                        <li>
+                            Heading for detailed chart in Page 1 is displayed based on the bucket selected from the grouping chart.
+                            As new bucket is clicked in the grouping chart, the heading is cleared and new appropriate heading is generated.
+                        </li>
+                        <li>
+                            Year selected from the year slider is also shown to the user.
+                        </li>
+                        <li>
+                            When selecting a legend filter, the rectangle for that filter grows in size a little bit to
+                            notify user of his/her selection. If the user select another legend filter the previous selection clears off
+                            and its legend rectangle goes back to original size. If the user clicked on an already selected legend rectangle
+                            than also it goes back to original size and clear filter.
                         </li>
                     </ul>
                 </li>
