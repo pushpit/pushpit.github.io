@@ -438,7 +438,7 @@
                         return color(d.name);
                     }
                 }).on("mouseover", function (d) {
-                d3.select(this).style("stroke-width", '6px');
+                d3.select(this).style("stroke-width", '10px');
                 div.transition()
                     .duration(200)
                     .style("opacity", 1);
@@ -671,7 +671,7 @@
                 .style("fill-opacity", 0.3)
                 .on("mouseover", function (d) {
                     console.log(d);
-                    d3.select(this).style("stroke-width", '6px');
+                    d3.select(this).style("stroke-width", '10px');
                     div.transition()
                         .duration(200)
                         .style("opacity", 1);
