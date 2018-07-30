@@ -115,7 +115,7 @@
         </table>
 
     </div>
-    <div id = "detailedGraph" class="graph">
+    <div id = "detailedGraph" class="graph" tabindex="1">
     </div>
     <script>
 
@@ -744,9 +744,11 @@
                     console.log(aggType);
                     document.getElementById('colorCode').getElementsByTagName('option')[3].selected = 'selected'
 
+                    $("#detailedGraph").focus();
                     if (aggType !== "Country") {
                         updateDetailedGraph(countriesData, countryColor, aggType, d.name);
                     }
+
                 });
 
                 // draw legend
